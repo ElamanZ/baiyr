@@ -8,7 +8,7 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <div className={styles.heroImageWrap}>
           <Image
-            src="/images/AboutHero.jpg"
+            src="/images/AboutHero.webp"
             alt="Baiyr — натуральный мед"
             fill
             priority
