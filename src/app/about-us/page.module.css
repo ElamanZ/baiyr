@@ -1,0 +1,165 @@
+.page {
+  background: #eed3a2;
+  min-height: 100vh;
+}
+
+.hero {
+  width: 100%;
+}
+
+.heroImageWrap {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  overflow: hidden;
+}
+
+/* размываем именно картинку */
+
+.heroImage {
+  object-fit: cover;
+  filter: blur(4px);
+  transform: scale(1.06);
+}
+
+/* логотип */
+
+.logo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -56%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* текстовый блок */
+
+.heroText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: #223c3bcc;
+  color: #ffffff;
+  padding: 28px 0 32px;
+}
+
+.heroTextInner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.heroText h1 {
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.heroText p {
+  max-width: 820px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ===== ADAPTIVE ===== */
+
+@media (max-width: 1400px) {
+  .heroTextInner {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .heroImageWrap {
+    min-height: 580px;
+  }
+
+  .heroTextInner {
+    padding: 0 32px;
+  }
+
+  .heroText h1 {
+    font-size: 28px;
+  }
+
+  .heroText p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroImageWrap {
+    min-height: 540px;
+  }
+
+  .heroTextInner {
+    padding: 0 20px;
+  }
+
+  .logo {
+    transform: translate(-50%, -58%) scale(0.88);
+  }
+
+  .heroText h1 {
+    font-size: 24px;
+  }
+
+  .heroText p {
+    font-size: 16px;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroImageWrap {
+    min-height: 500px;
+  }
+
+  .heroTextInner {
+    padding: 0 16px;
+  }
+
+  .logo {
+    transform: translate(-50%, -60%) scale(0.72);
+  }
+
+  .heroText h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .heroText p {
+    font-size: 15px;
+    line-height: 1.45;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .heroImageWrap {
+    min-height: 440px;
+  }
+
+  .heroTextInner {
+    padding: 0 12px;
+  }
+
+  .logo {
+    transform: translate(-50%, -62%) scale(0.58);
+  }
+
+  .heroText h1 {
+    font-size: 20px;
+  }
+
+  .heroText p {
+    font-size: 14px;
+  }
+}
