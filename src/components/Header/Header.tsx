@@ -21,8 +21,8 @@ export default function Header() {
 
         <nav className={styles.nav}>
           <Link
-            href="/o-nas"
-            className={`${styles.navLink} ${isActive("/o-nas") ? styles.active : ""}`}
+            href="/about-us"
+            className={`${styles.navLink} ${isActive("/about-us") ? styles.active : ""}`}
           >
             <span className={styles.icon}>
               <AboutIcon />
