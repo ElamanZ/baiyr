@@ -12,6 +12,7 @@ export default function AboutPage() {
             alt="Baiyr — натуральный мед"
             fill
             priority
+            sizes="100vw"
             className={styles.heroImage}
           />
 
