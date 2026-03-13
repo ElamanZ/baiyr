@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./AddressesSection.module.css";
 import shopImage from "@/assets/images/Shop.png";
 import LocationIcon from "@/components/icons/LocationIcon";
-import PhoneIcon from "@/components/icons/PhoneIcon";
 import ClockIcon from "@/components/icons/ClockIcon";
 
 const addresses = [
@@ -54,7 +53,7 @@ export default function AddressesSection() {
 
               <div className={styles.row}>
                 <span className={styles.icon}>
-                  <PhoneIcon />
+                  <ClockIcon />
                 </span>
                 <span className={styles.secondaryText}>{item.phone}</span>
               </div>
