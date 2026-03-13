@@ -90,21 +90,17 @@
   display: inline;
 }
 
-
-.navLinkActive {
+.navLink[data-active="true"],
+.cartButton[data-active="true"] {
   background: #ffe2b6;
   color: #223c3b;
 }
 
-.cartButtonActive {
-  background: #ffe2b6;
-  color: #223c3b;
-}
-
-.navLink:hover:not(.navLinkActive),
-.cartButton:hover:not(.cartButtonActive) {
+.navLink:hover:not([data-active="true"]),
+.cartButton:hover:not([data-active="true"]) {
   background: #456766;
 }
+
 
 @media (max-width: 1400px) {
   .container {

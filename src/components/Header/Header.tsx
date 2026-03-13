@@ -15,6 +15,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
+      <p style={{ color: "white" }}>{pathname}</p>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           Baiyr
@@ -23,7 +24,8 @@ export default function Header() {
         <nav className={styles.nav}>
           <Link
             href="/about-us"
-            className={`${styles.navLink} ${isActive("/about-us") ? styles.navLinkActive : ""}`}
+            className={styles.navLink}
+            data-active={isActive("/about-us")}
           >
             <span className={styles.icon}>
               <AboutIcon />
@@ -33,7 +35,8 @@ export default function Header() {
 
           <Link
             href="/catalog"
-            className={`${styles.navLink} ${isActive("/catalog") ? styles.navLinkActive : ""}`}
+            className={styles.navLink}
+            data-active={isActive("/catalog")}
           >
             <span className={styles.icon}>
               <CatalogIcon />
@@ -43,7 +46,8 @@ export default function Header() {
 
           <Link
             href="/cart"
-            className={`${styles.cartButton} ${isActive("/cart") ? styles.cartButtonActive : ""}`}
+            className={styles.cartButton}
+            data-active={isActive("/cart")}
           >
             <span className={styles.icon}>
               <CartIcon />
