@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import LogoIcon from "@/components/icons/LogoIcon";
-import image from "./AboutHero.webp";
 
 export default function AboutPage() {
   return (
@@ -9,7 +8,7 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <div className={styles.heroImageWrap}>
           <Image
-            src={image}
+            src="/images/AboutHero.webp"
             alt="Baiyr — натуральный мед"
             fill
             priority

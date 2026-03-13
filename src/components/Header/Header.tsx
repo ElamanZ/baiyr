@@ -10,7 +10,8 @@ import CartIcon from "../icons/CartIcon";
 export default function Header() {
   const pathname = usePathname();
 
-  const isActive = (href: string) => pathname.startsWith(href);
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className={styles.header}>
@@ -22,7 +23,7 @@ export default function Header() {
         <nav className={styles.nav}>
           <Link
             href="/about-us"
-            className={`${styles.navLink} ${isActive("/about-us") ? styles.active : ""}`}
+            className={`${styles.navLink} ${isActive("/about-us") ? styles.navLinkActive : ""}`}
           >
             <span className={styles.icon}>
               <AboutIcon />
@@ -32,7 +33,7 @@ export default function Header() {
 
           <Link
             href="/catalog"
-            className={`${styles.navLink} ${isActive("/catalog") ? styles.active : ""}`}
+            className={`${styles.navLink} ${isActive("/catalog") ? styles.navLinkActive : ""}`}
           >
             <span className={styles.icon}>
               <CatalogIcon />
@@ -42,7 +43,7 @@ export default function Header() {
 
           <Link
             href="/cart"
-            className={`${styles.cartButton} ${isActive("/cart") ? styles.active : ""}`}
+            className={`${styles.cartButton} ${isActive("/cart") ? styles.cartButtonActive : ""}`}
           >
             <span className={styles.icon}>
               <CartIcon />

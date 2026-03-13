@@ -59,15 +59,6 @@
   color: #f6f0de;
 }
 
-.active {
-  background: #ffe2b6;
-  color: #223c3b;
-}
-
-.navLink:hover:not(.active),
-.cartButton:hover:not(.active) {
-  background: #456766;
-}
 
 .icon {
   display: flex;
@@ -97,6 +88,22 @@
 .linkText,
 .cartText {
   display: inline;
+}
+
+
+.navLinkActive {
+  background: #ffe2b6;
+  color: #223c3b;
+}
+
+.cartButtonActive {
+  background: #ffe2b6;
+  color: #223c3b;
+}
+
+.navLink:hover:not(.navLinkActive),
+.cartButton:hover:not(.cartButtonActive) {
+  background: #456766;
 }
 
 @media (max-width: 1400px) {
