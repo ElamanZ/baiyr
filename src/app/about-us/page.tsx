@@ -1,43 +1,14 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import LogoIcon from "@/components/icons/LogoIcon";
-import aboutHero from "@/assets/images/AboutHero.webp";
+import AboutHero from "@/components/about/AboutHero/AboutHero";
+import WholesaleSection from "@/components/about/WholesaleSection/WholesaleSection";
 
 export default function AboutPage() {
   return (
     <div className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.heroImageWrap}>
-          <Image
-            src={aboutHero}
-            // src="/images/AboutHero.webp"
-            alt="Baiyr — натуральный мед"
-            fill
-            placeholder="blur"
-            priority
-            sizes="100vw"
-            className={styles.heroImage}
-          />
-
-          <div className={styles.heroOverlay} />
-
-          <div className={styles.logo}>
-            <LogoIcon size={300} />
-          </div>
-
-          <div className={styles.heroText}>
-            <div className={styles.heroTextInner}>
-              <h1>Baiyr — О компании</h1>
-              <p>
-                10 лет с натуральным мёдом.
-                <br />
-                Мы создаём продукцию из экологически чистых районов и гордимся
-                её вкусом и качеством.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutHero />
+      <div className={styles.content}>
+        <WholesaleSection />
+      </div>
     </div>
   );
 }
