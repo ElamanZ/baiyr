@@ -7,8 +7,12 @@
 html,
 body {
   font-family: Arial, sans-serif;
-  background: #fcf7f1;
+  background: #FFE2B6;
   color: #2b1d0e;
+}
+
+body {
+  min-width: 320px;
 }
 
 a {
@@ -19,6 +23,13 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 main {

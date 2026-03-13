@@ -8,6 +8,7 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <div className={styles.heroImageWrap}>
           <Image
+            // src={aboutHero}
             src="/images/AboutHero.webp"
             alt="Baiyr — натуральный мед"
             fill
@@ -15,6 +16,8 @@ export default function AboutPage() {
             sizes="100vw"
             className={styles.heroImage}
           />
+
+          <div className={styles.heroOverlay} />
 
           <div className={styles.logo}>
             <LogoIcon size={300} />

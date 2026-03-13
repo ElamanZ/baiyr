@@ -19,12 +19,12 @@
 }
 
 .logo {
+  flex-shrink: 0;
   font-size: 36px;
   font-weight: 800;
   line-height: 1;
-  color: #ffe2b6;
   letter-spacing: -0.02em;
-  flex-shrink: 0;
+  color: #ffe2b6;
 }
 
 .nav {
@@ -43,22 +43,24 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  white-space: nowrap;
   font-size: 15px;
   font-weight: 700;
-  white-space: nowrap;
   transition: background 0.2s ease, color 0.2s ease;
-}
-
-.navLink {
   background: #385756;
   color: #f6f0de;
 }
 
-.cartButton {
-  background: #385756;
-  color: #f6f0de;
+.navLink[aria-current="page"],
+.cartButton[aria-current="page"] {
+  background: #ffe2b6;
+  color: #223c3b;
 }
 
+.navLink:hover:not([aria-current="page"]),
+.cartButton:hover:not([aria-current="page"]) {
+  background: #456766;
+}
 
 .icon {
   display: flex;
@@ -69,6 +71,11 @@
 .icon :global(svg) {
   width: 18px;
   height: 18px;
+}
+
+.linkText,
+.cartText {
+  display: inline;
 }
 
 .cartCount {
@@ -84,23 +91,6 @@
   font-size: 14px;
   font-weight: 800;
 }
-
-.linkText,
-.cartText {
-  display: inline;
-}
-
-.navLink[data-active="true"],
-.cartButton[data-active="true"] {
-  background: #ffe2b6;
-  color: #223c3b;
-}
-
-.navLink:hover:not([data-active="true"]),
-.cartButton:hover:not([data-active="true"]) {
-  background: #456766;
-}
-
 
 @media (max-width: 1400px) {
   .container {

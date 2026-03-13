@@ -1,60 +1,73 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useSelectedLayoutSegment } from "next/navigation";
 import styles from "./Header.module.css";
 import AboutIcon from "../icons/AboutIcon";
 import CatalogIcon from "../icons/CatalogIcon";
 import CartIcon from "../icons/CartIcon";
 
-export default function Header() {
-  const pathname = usePathname();
+const navItems = [
+  {
+    href: "/about-us",
+    label: "О НАС",
+    segment: "about-us",
+    icon: AboutIcon,
+    className: "navLink",
+  },
+  {
+    href: "/catalog",
+    label: "КАТАЛОГ",
+    segment: "catalog",
+    icon: CatalogIcon,
+    className: "navLink",
+  },
+  {
+    href: "/cart",
+    label: "В КОРЗИНЕ",
+    segment: "cart",
+    icon: CartIcon,
+    className: "cartButton",
+  },
+] as const;
 
-  const isActive = (href: string) =>
-    pathname === href || pathname.startsWith(`${href}/`);
+export default function Header() {
+  const segment = useSelectedLayoutSegment();
 
   return (
     <header className={styles.header}>
-      <p style={{ color: "white" }}>{pathname}</p>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           Baiyr
         </Link>
 
-        <nav className={styles.nav}>
-          <Link
-            href="/about-us"
-            className={styles.navLink}
-            data-active={isActive("/about-us")}
-          >
-            <span className={styles.icon}>
-              <AboutIcon />
-            </span>
-            <span className={styles.linkText}>О НАС</span>
-          </Link>
+        <nav className={styles.nav} aria-label="Основная навигация">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = segment === item.segment;
 
-          <Link
-            href="/catalog"
-            className={styles.navLink}
-            data-active={isActive("/catalog")}
-          >
-            <span className={styles.icon}>
-              <CatalogIcon />
-            </span>
-            <span className={styles.linkText}>КАТАЛОГ</span>
-          </Link>
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={styles[item.className]}
+                aria-current={isActive ? "page" : undefined}
+              >
+                <span className={styles.icon}>
+                  <Icon />
+                </span>
 
-          <Link
-            href="/cart"
-            className={styles.cartButton}
-            data-active={isActive("/cart")}
-          >
-            <span className={styles.icon}>
-              <CartIcon />
-            </span>
-            <span className={styles.cartText}>В КОРЗИНЕ</span>
-            <span className={styles.cartCount}>1</span>
-          </Link>
+                {item.segment === "cart" ? (
+                  <>
+                    <span className={styles.cartText}>{item.label}</span>
+                    <span className={styles.cartCount}>1</span>
+                  </>
+                ) : (
+                  <span className={styles.linkText}>{item.label}</span>
+                )}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>
