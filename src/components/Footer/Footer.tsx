@@ -3,11 +3,8 @@
 import InstagramIcon from "../icons/InstagramIcon";
 import PhoneIcon from "../icons/PhoneIcon";
 import styles from "./Footer.module.css";
-import { useRouter } from "next/navigation";
 
 export default function Footer() {
-  const router = useRouter();
-
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
