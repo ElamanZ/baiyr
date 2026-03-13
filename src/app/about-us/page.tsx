@@ -1,3 +1,4 @@
+import ProductsSection from "@/components/about/ProductsSection/ProductsSection";
 import styles from "./page.module.css";
 import AboutHero from "@/components/about/AboutHero/AboutHero";
 import QualitySection from "@/components/about/QualitySection/QualitySection";
@@ -12,6 +13,7 @@ export default function AboutPage() {
         <WholesaleSection />
         <WhyChooseSection />
         <QualitySection />
+        <ProductsSection />
       </div>
     </div>
   );

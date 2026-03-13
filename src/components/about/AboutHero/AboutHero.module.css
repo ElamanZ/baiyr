@@ -12,15 +12,7 @@
 .heroImage {
   object-fit: cover;
   transform: scale(1.02);
-}
-
-.heroOverlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(34, 60, 59, 0.08), rgba(34, 60, 59, 0.16)),
-    linear-gradient(to top, rgba(34, 60, 59, 0.72), rgba(34, 60, 59, 0.08));
-  z-index: 1;
+  filter:blur(1px)
 }
 
 .logo {
