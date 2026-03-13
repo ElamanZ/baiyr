@@ -56,7 +56,7 @@ export default function ProductsSection() {
         </div>
 
         <div className={styles.giftContent}>
-          <h2>Подарок С Заботой</h2>
+          <h2>Подарок с заботой</h2>
           <p>
             Натуральный и полезный подарок, который выражает заботу о здоровье и
             самочувствии.

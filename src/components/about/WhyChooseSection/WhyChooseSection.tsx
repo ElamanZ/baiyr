@@ -19,7 +19,7 @@ const locationCards = [
 export default function WhyChooseSection() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Почему Выбирают Нас?</h2>
+      <h2 className={styles.title}>Почему выбирают нас?</h2>
 
       <div className={styles.topGrid}>
         {topCards.map((text) => (
