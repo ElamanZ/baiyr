@@ -10,7 +10,11 @@ const topCards = [
   "Собственная фабрика",
 ];
 
-const locationCards = ["Бишкек, Ул.", "Бишкек, Ул.", "Бишкек, Ул."];
+const locationCards = [
+  "Бишкек Ул.Панфилова 304",
+  "Бишкек Ул.Чокана Валиханова 16",
+  "Бишкек Ул.Раззакова 19",
+];
 
 export default function WhyChooseSection() {
   return (

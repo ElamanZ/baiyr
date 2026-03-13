@@ -1,0 +1,122 @@
+.section {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.95fr) minmax(0, 1.45fr);
+  gap: 28px;
+  align-items: stretch;
+  border-radius: 14px;
+  background: #385756;
+  padding: 26px 32px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 6px;
+}
+
+.textBlock h2 {
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.textBlock p {
+  max-width: 360px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.22;
+  font-weight: 500;
+}
+
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.imageWrap {
+  position: relative;
+  min-height: 260px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #cfcfcf;
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.4fr);
+    gap: 22px;
+    padding: 22px 24px;
+  }
+
+  .imagesGrid {
+    gap: 16px;
+  }
+
+  .imageWrap {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .textBlock p {
+    max-width: 100%;
+  }
+
+  .imagesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .textBlock h2 {
+    font-size: 24px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 18px 16px;
+    gap: 18px;
+  }
+
+
+    .textBlock h2 {
+    font-size: 22px;
+    }
+
+    .textBlock p {
+    font-size: 18px;
+    }
+
+  .imagesGrid {
+    gap: 12px;
+  }
+
+  .imageWrap {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 560px) {
+  .imagesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrap {
+    min-height: 180px;
+  }
+
+  
+}
