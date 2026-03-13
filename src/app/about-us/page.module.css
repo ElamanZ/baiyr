@@ -19,6 +19,7 @@
 .heroImage {
   object-fit: cover;
   filter: blur(1px);
+  transform: scale(1.06);
 }
 
 /* логотип */
