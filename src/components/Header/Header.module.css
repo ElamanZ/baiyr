@@ -4,40 +4,69 @@
   z-index: 50;
   width: 100%;
   background: #223c3b;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 14px 80px;
+  padding: 16px clamp(12px, 4vw, 64px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
 }
 
-.logo {
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: #ffe2b6;
+  min-width: 0;
+}
+
+.logoLink :global(svg) {
+  display: block;
+  width: clamp(120px, 16vw, 180px);
+  height: auto;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: flex-end;
+  gap: clamp(6px, 1vw, 18px);
   flex-shrink: 0;
+  min-width: 0;
 }
 
-.navLink,
+.navLink {
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+
+.navLink[aria-current="page"] {
+  color: #ffc060;
+}
+
 .cartButton {
-  height: 44px;
-  padding: 0 18px;
+  height: 42px;
+  padding: 0 0 0 12px;
   border-radius: 8px;
   display: inline-flex;
   align-items: center;
@@ -45,159 +74,229 @@
   gap: 8px;
   white-space: nowrap;
   font-size: 15px;
-  font-weight: 700;
-  transition: background 0.2s ease, color 0.2s ease;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
   background: #385756;
   color: #f6f0de;
+  border: none;
+  cursor: pointer;
 }
 
-.navLink[aria-current="page"],
-.cartButton[aria-current="page"] {
-  background: #ffe2b6;
-  color: #223c3b;
-}
 
-.navLink:hover:not([aria-current="page"]),
-.cartButton:hover:not([aria-current="page"]) {
-  background: #456766;
-}
 
-.icon {
-  display: flex;
+.icon,
+.navIcon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.icon :global(svg) {
-  width: 18px;
-  height: 18px;
+.icon :global(svg),
+.navIcon :global(svg) {
+  width: 20px;
+  height: 20px;
 }
 
 .linkText,
 .cartText {
   display: inline;
+  line-height: 1;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .cartCount {
-  width: 26px;
-  height: 26px;
-  padding: 6px;
+  min-width: 38px;
+  height: 42px;
+  padding: 0 10px;
   border-radius: 8px;
   background: #ffffff;
   color: #223c3b;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-@media (max-width: 1400px) {
+/* large desktop */
+@media (max-width: 1280px) {
   .container {
-    padding: 14px 48px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .container {
-    padding: 12px 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
 
-  .logo {
-    font-size: 32px;
+  .navLink {
+    padding: 0 10px;
+    gap: 6px;
   }
 
-  .nav {
-    gap: 12px;
-  }
-
-  .navLink,
-  .cartButton {
-    padding: 0 14px;
+  .linkText,
+  .cartText {
     font-size: 14px;
   }
 
-  .icon :global(svg) {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    padding: 12px 20px;
-  }
-
-  .logo {
-    font-size: 28px;
-  }
-
-  .nav {
-    gap: 10px;
-  }
-
-  .navLink,
   .cartButton {
-    padding: 0 12px;
-    font-size: 13px;
+    height: 40px;
+    padding-left: 10px;
+  }
+
+  .cartCount {
+    min-width: 34px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .icon :global(svg),
+  .navIcon :global(svg) {
+    width: 18px;
+    height: 18px;
   }
 }
 
-@media (max-width: 768px) {
+/* tablet */
+@media (max-width: 992px) {
   .container {
-    padding: 10px 16px;
     gap: 12px;
   }
 
-  .logo {
-    font-size: 24px;
+  .logoLink :global(svg) {
+    width: clamp(108px, 18vw, 150px);
   }
 
   .nav {
     gap: 8px;
   }
 
-  .navLink,
-  .cartButton {
-    height: 40px;
+  .navLink {
+    height: 36px;
     padding: 0 10px;
-    font-size: 12px;
+  }
+
+  .cartButton {
+    height: 36px;
+    padding-left: 10px;
+    gap: 6px;
   }
 
   .cartText {
     display: none;
   }
 
-  .icon :global(svg) {
-    width: 16px;
-    height: 16px;
-  }
-
-  .cartButton .icon :global(svg) {
-    width: 20px;
-    height: 20px;
-  }
-
   .cartCount {
-    width: 24px;
-    height: 24px;
-    font-size: 12px;
+    min-width: 36px;
+    height: 36px;
+    font-size: 15px;
+    padding: 0 8px;
+  }
+
+  .icon :global(svg),
+  .navIcon :global(svg) {
+    width: 18px;
+    height: 18px;
   }
 }
 
-@media (max-width: 560px) {
+/* mobile */
+@media (max-width: 768px) {
   .container {
     padding: 10px 12px;
     gap: 8px;
   }
 
-  .logo {
-    font-size: 22px;
+  .logoLink :global(svg) {
+    width: 52px;
+    height: 52px;
   }
 
-  .navLink,
-  .cartButton {
+  .nav {
+    gap: 6px;
+  }
+
+  .navLink {
+    height: 30px;
+    min-width: auto;
     padding: 0 8px;
+    gap: 0;
+    background: transparent;
+  }
+
+  .navIcon {
+    display: none;
+  }
+
+  .linkText {
+    display: inline;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .cartButton {
+    height: 30px;
+    padding: 0 0 0 10px;
+    gap: 6px;
+  }
+
+  .cartCount {
+    min-width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .icon :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .logoLink :global(svg) {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav {
+    gap: 4px;
+  }
+
+  .navLink {
+    min-width: auto;
+    height: 34px;
+    padding: 0 6px;
+    border-radius: 7px;
+  }
+
+  .linkText {
     font-size: 11px;
+  }
+
+  .cartButton {
+    height: 30px;
+    padding-left: 8px;
+    border-radius: 7px;
+    gap: 4px;
+  }
+
+  .cartCount {
+    min-width: 26px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 7px;
+  }
+
+  .icon :global(svg) {
+    width: 16px;
+    height: 16px;
   }
 }
