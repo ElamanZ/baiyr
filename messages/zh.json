@@ -8,12 +8,12 @@
     "cartAria": "购物车"
   },
   "HomePage": {
-     "homeHero": {
-    "title": "来自吉尔吉斯斯坦的天然蜂蜜",
-    "line1": "我们在吉尔吉斯斯坦山区拥有自己的蜂场。",
-    "line2": "为商店和咖啡馆提供批发供应。",
-    "button": "联系"
-  },
+    "homeHero": {
+      "title": "来自吉尔吉斯斯坦的天然蜂蜜",
+      "line1": "我们在吉尔吉斯斯坦山区拥有自己的蜂场。",
+      "line2": "为商店和咖啡馆提供批发供应。",
+      "button": "联系"
+    },
     "whyUsTitle": "为什么选择我们",
     "steps": {
       "beehivesTitle": "自有\n蜂场",
@@ -22,6 +22,33 @@
       "mountainsDescription": "生态洁净地区",
       "factoryTitle": "自有\n生产",
       "factoryDescription": "全流程质量控制"
+    },
+    "CertificatesSection": {
+      "title": "质量与证书",
+      "certificateAlt": "证书 {number}"
+    },
+      "ProductsShowcaseSection": {
+    "prev": "上一个商品",
+    "next": "下一个商品",
+    "items": {
+      "honey": {
+        "title": "蜂蜜",
+        "description": "天然能量与日常免疫支持。"
+      },
+      "perga": {
+        "title": "蜂粮",
+        "description": "帮助恢复体力并保持活力。"
+      },
+      "pollen": {
+        "title": "蜂花粉",
+        "description": "富含维生素和营养成分。"
+      }
+    },
+    "gift": {
+      "title": "礼品套装",
+      "description": "天然且精致，适合任何场合。",
+      "button": "查看套装"
     }
+  }
   }
 }

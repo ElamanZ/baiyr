@@ -8,12 +8,12 @@
     "cartAria": "Cart"
   },
   "HomePage": {
-     "homeHero": {
-    "title": "Natural honey from Kyrgyzstan",
-    "line1": "Own apiaries in the mountains of Kyrgyzstan.",
-    "line2": "Wholesale supply for shops and cafes.",
-    "button": "Contact"
-  },
+    "homeHero": {
+      "title": "Natural honey from Kyrgyzstan",
+      "line1": "Own apiaries in the mountains of Kyrgyzstan.",
+      "line2": "Wholesale supply for shops and cafes.",
+      "button": "Contact"
+    },
     "whyUsTitle": "Why choose us",
     "steps": {
       "beehivesTitle": "Own\napiaries",
@@ -22,6 +22,33 @@
       "mountainsDescription": "Ecologically clean regions",
       "factoryTitle": "Own\nproduction",
       "factoryDescription": "Quality control at every stage"
+    },
+    "CertificatesSection": {
+      "title": "Quality and certificates",
+      "certificateAlt": "Certificate {number}"
+    },
+     "ProductsShowcaseSection": {
+    "prev": "Previous product",
+    "next": "Next product",
+    "items": {
+      "honey": {
+        "title": "Honey",
+        "description": "Natural energy and daily immune support."
+      },
+      "perga": {
+        "title": "Perga",
+        "description": "Supports strength, recovery and tone."
+      },
+      "pollen": {
+        "title": "Pollen",
+        "description": "Rich in vitamins and nutrients for the body."
+      }
+    },
+    "gift": {
+      "title": "Gift sets",
+      "description": "Natural and elegant for any occasion.",
+      "button": "View sets"
     }
+  }
   }
 }
