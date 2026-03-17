@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./AboutHero.module.css";
-import LogoIcon from "@/components/icons/LogoIcon";
 import aboutHero from "@/assets/images/AboutHero.webp";
 
 export default function AboutHero() {
@@ -17,21 +16,21 @@ export default function AboutHero() {
           className={styles.heroImage}
         />
 
-        <div className={styles.heroOverlay} />
+        <div className={styles.overlay} />
 
-        <div className={styles.logo}>
-          <LogoIcon size={300} />
-        </div>
+        <div className={styles.heroContent}>
+          <div className={styles.container}>
+            <div className={styles.heroText}>
+              <h1>Натуральный мёд из Кыргызстана</h1>
 
-        <div className={styles.heroText}>
-          <div className={styles.heroTextInner}>
-            <h1>Baiyr — О компании</h1>
-            <p>
-              10 лет с натуральным мёдом.
-              <br />
-              Мы создаём продукцию из экологически чистых районов и гордимся её
-              вкусом и качеством.
-            </p>
+              <div>
+                <p>Собственные пасеки в горах Кыргызстана.</p>
+
+                <p>Оптовые поставки для магазинов и кафе.</p>
+              </div>
+
+              <button className={styles.button}>Связаться</button>
+            </div>
           </div>
         </div>
       </div>
