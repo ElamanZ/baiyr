@@ -1,5 +1,27 @@
 {
+  "Header": {
+    "home": "HOME",
+    "catalog": "CATALOG",
+    "cart": "IN CART",
+    "homeAria": "Go to homepage",
+    "navAria": "Main navigation",
+    "cartAria": "Cart"
+  },
   "HomePage": {
-    "title": "Home page"
+     "homeHero": {
+    "title": "Natural honey from Kyrgyzstan",
+    "line1": "Own apiaries in the mountains of Kyrgyzstan.",
+    "line2": "Wholesale supply for shops and cafes.",
+    "button": "Contact"
+  },
+    "whyUsTitle": "Why choose us",
+    "steps": {
+      "beehivesTitle": "Own\napiaries",
+      "beehivesDescription": "We produce honey ourselves",
+      "mountainsTitle": "Mountain regions\nof Kyrgyzstan",
+      "mountainsDescription": "Ecologically clean regions",
+      "factoryTitle": "Own\nproduction",
+      "factoryDescription": "Quality control at every stage"
+    }
   }
 }

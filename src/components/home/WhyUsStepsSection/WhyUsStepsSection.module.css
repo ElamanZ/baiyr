@@ -1,0 +1,217 @@
+.section {
+  width: 100%;
+  padding: 64px 0 72px;
+  background: linear-gradient(
+    to bottom,
+    #FFE2B6 0%,
+    #FFFFFF 100%
+  );
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 4vw, 64px);
+}
+
+.title {
+  margin: 0 0 56px;
+  text-align: center;
+  font-size: 48px;
+  line-height: 1.12;
+  font-weight: 500;
+  color: #223c3b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 84px);
+  align-items: start;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.imageWrap {
+  width: 168px;
+  height: 112px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 168px;
+  height: 112px;
+  object-fit: contain;
+  display: block;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  font-size: 24px;
+  line-height: 1.48;
+  font-weight: 600;
+  color: #223c3b;
+}
+
+.line {
+  display: block;
+}
+
+.description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #223c3b;
+}
+
+/* decorative connectors */
+
+.connector {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cardFirst .connector {
+  width: 220px;
+  top: 80px;      /* от текста к картинке второй */
+  right: -140px;
+}
+
+.cardSecond .connector {
+  width: 220px;
+  top: 80px;      /* от текста второй к картинке третьей */
+  right: -140px;
+}
+
+/* laptop */
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 52px 0 60px;
+  }
+
+  .title {
+    margin-bottom: 48px;
+    font-size: 42px;
+  }
+
+  .grid {
+    column-gap: 44px;
+  }
+
+.cardFirst .connector,
+.cardSecond .connector {
+  width: 140px;
+  top: 70px;      
+  right: -100px;
+}
+
+}
+
+
+@media (max-width: 992px) {
+  .section {
+    padding: 42px 0 48px;
+  }
+
+  .title {
+    margin-bottom: 38px;
+    font-size: 34px;
+  }
+
+  .grid {
+    column-gap: 22px;
+  }
+
+  .imageWrap {
+    width: 144px;
+    height: 96px;
+    margin-bottom: 22px;
+  }
+
+  .image {
+    width: 144px;
+    height: 96px;
+  }
+
+  .cardTitle {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .cardFirst .connector,
+  .cardSecond .connector {
+   width: 90px;
+  top: 80px;      
+  right: -70px;
+  }
+
+}
+
+/* mobile */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 28px 0 34px;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .title {
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.18;
+    font-weight: 500;
+    color: #223c3b;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 42px;
+  }
+
+  .imageWrap {
+    width: 100px;
+    height: 66px;
+    margin-bottom: 18px;
+  }
+
+  .image {
+    width: 100px;
+    height: 66px;
+  }
+
+  .cardTitle {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 1.45;
+    font-weight: 500;
+    color: #223c3b;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 400;
+    color: #223c3b;
+  }
+}

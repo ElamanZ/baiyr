@@ -1,8 +1,13 @@
-import Image from "next/image";
-import styles from "./AboutHero.module.css";
-import aboutHero from "@/assets/images/AboutHero.webp";
+"use client";
 
-export default function AboutHero() {
+import Image from "next/image";
+import styles from "./HomeHero.module.css";
+import aboutHero from "@/assets/images/AboutHero.webp";
+import { useTranslations } from "next-intl";
+
+export default function HomeHero() {
+  const t = useTranslations("HomePage.homeHero");
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroImageWrap}>
@@ -21,15 +26,24 @@ export default function AboutHero() {
         <div className={styles.heroContent}>
           <div className={styles.container}>
             <div className={styles.heroText}>
-              <h1>Натуральный мёд из Кыргызстана</h1>
+              <h1>{t("title")}</h1>
 
               <div>
-                <p>Собственные пасеки в горах Кыргызстана.</p>
-
-                <p>Оптовые поставки для магазинов и кафе.</p>
+                <p>{t("line1")}</p>
+                <p>{t("line2")}</p>
               </div>
 
-              <button className={styles.button}>Связаться</button>
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/996502707800?text=Здравствуйте, хочу заказать мед!",
+                    "_blank",
+                  )
+                }
+                className={styles.button}
+              >
+                {t("button")}
+              </button>
             </div>
           </div>
         </div>

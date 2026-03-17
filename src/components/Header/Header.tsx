@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
+import { useTranslations } from "next-intl";
 import styles from "./Header.module.css";
 import CatalogIcon from "../icons/CatalogIcon";
 import CartIcon from "../icons/CartIcon";
@@ -11,41 +12,42 @@ import ChangeLang from "../changeLang/ChangeLangNav";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import Logo from "../icons/Logo";
 
-const navItems = [
-  {
-    href: "/",
-    label: "ГЛАВНАЯ",
-    segment: null,
-    icon: HomeIcon,
-    className: "navLink",
-  },
-  {
-    href: "/catalog",
-    label: "КАТАЛОГ",
-    segment: "catalog",
-    icon: CatalogIcon,
-    className: "navLink",
-  },
-] as const;
-
 export default function Header() {
+  const t = useTranslations("Header");
   const segment = useSelectedLayoutSegment();
   const isMd = !useBreakpoint("md");
+
+  const navItems = [
+    {
+      href: "/",
+      label: t("home"),
+      segment: null,
+      icon: HomeIcon,
+      className: "navLink",
+    },
+    {
+      href: "/catalog",
+      label: t("catalog"),
+      segment: "catalog",
+      icon: CatalogIcon,
+      className: "navLink",
+    },
+  ] as const;
 
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         {isMd ? (
-          <Link href="/" aria-label="На главную">
+          <Link href="/" aria-label={t("homeAria")}>
             <Logo size={30} />
           </Link>
         ) : (
-          <Link href="/" className={styles.logoLink} aria-label="На главную">
+          <Link href="/" className={styles.logoLink} aria-label={t("homeAria")}>
             <LogoWithText />
           </Link>
         )}
 
-        <nav className={styles.nav} aria-label="Основная навигация">
+        <nav className={styles.nav} aria-label={t("navAria")}>
           {navItems.map((item) => {
             const Icon = item.icon;
             const isHome = item.href === "/";
@@ -69,11 +71,11 @@ export default function Header() {
             );
           })}
 
-          <button className={styles.cartButton} aria-label="Корзина">
+          <button className={styles.cartButton} aria-label={t("cartAria")}>
             <span className={styles.icon}>
               <CartIcon />
             </span>
-            <span className={styles.cartText}>В КОРЗИНЕ</span>
+            <span className={styles.cartText}>{t("cart")}</span>
             <span className={styles.cartCount}>1</span>
           </button>
 

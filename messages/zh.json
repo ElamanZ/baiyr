@@ -1,5 +1,27 @@
 {
+  "Header": {
+    "home": "首页",
+    "catalog": "目录",
+    "cart": "购物车中",
+    "homeAria": "返回首页",
+    "navAria": "主导航",
+    "cartAria": "购物车"
+  },
   "HomePage": {
-    "title": "主页"
+     "homeHero": {
+    "title": "来自吉尔吉斯斯坦的天然蜂蜜",
+    "line1": "我们在吉尔吉斯斯坦山区拥有自己的蜂场。",
+    "line2": "为商店和咖啡馆提供批发供应。",
+    "button": "联系"
+  },
+    "whyUsTitle": "为什么选择我们",
+    "steps": {
+      "beehivesTitle": "自有\n蜂场",
+      "beehivesDescription": "我们自己生产蜂蜜",
+      "mountainsTitle": "吉尔吉斯斯坦\n高山区",
+      "mountainsDescription": "生态洁净地区",
+      "factoryTitle": "自有\n生产",
+      "factoryDescription": "全流程质量控制"
+    }
   }
 }
