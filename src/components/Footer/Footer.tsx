@@ -30,7 +30,14 @@ export default function Footer() {
               </div>
             </div>
 
-            <button className={styles.button}>{t("instagramButton")}</button>
+            <button
+              className={styles.button}
+              onClick={() =>
+                window.open("https://www.instagram.com/baiyr_honey", "_blank")
+              }
+            >
+              {t("instagramButton")}
+            </button>
           </article>
 
           <article className={styles.card}>
@@ -43,7 +50,17 @@ export default function Footer() {
               </div>
             </div>
 
-            <button className={styles.button}>{t("phoneButton")}</button>
+            <button
+              className={styles.button}
+              onClick={() =>
+                window.open(
+                  "https://wa.me/996502707800?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5,%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D0%B4!%20",
+                  "_blank",
+                )
+              }
+            >
+              {t("phoneButton")}
+            </button>
           </article>
         </div>
       </div>
