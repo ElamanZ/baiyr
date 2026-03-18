@@ -1,0 +1,15 @@
+.banner {
+  width: 100%;
+  margin-bottom: 32px;
+  padding: 8px;
+  border: 1px solid #6f8583;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  text-align: center;
+  color: #000000;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}

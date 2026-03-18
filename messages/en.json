@@ -82,5 +82,18 @@
     "phoneLabel": "Phone number",
     "phoneValue": "+996 (000) 45-45-45",
     "phoneButton": "Message"
+  },
+   "CatalogPage": {
+    "tabs": {
+      "all": "All",
+      "honey": "Honey",
+      "products": "Honey products",
+      "giftSets": "Gift Sets"
+    },
+    "delivery": "Free delivery in Bishkek from 3000 som",
+    "buy": "Buy",
+    "items": {
+      "whiteHoney": "White honey"
+    }
   }
 }

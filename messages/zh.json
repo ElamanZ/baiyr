@@ -82,5 +82,18 @@
     "phoneLabel": "电话号码",
     "phoneValue": "+996 (000) 45-45-45",
     "phoneButton": "联系"
+  },
+   "CatalogPage": {
+    "tabs": {
+      "all": "全部",
+      "honey": "蜂蜜",
+      "products": "蜂蜜制品",
+      "giftSets": "礼品套装"
+    },
+    "delivery": "比什凯克满 3000 索姆免费配送",
+    "buy": "购买",
+    "items": {
+      "whiteHoney": "白蜂蜜"
+    }
   }
 }
