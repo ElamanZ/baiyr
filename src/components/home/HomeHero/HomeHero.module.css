@@ -133,7 +133,7 @@
 
   .heroText p {
     max-width: 340px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .button {
@@ -158,18 +158,18 @@
   }
 
   .heroText h1 {
-    max-width: 210px;
+    max-width: 230px;
     font-size: 24px;
   }
 
   .heroText p {
     max-width: 240px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .button {
     width: 180px;
     height: 38px;
-    font-size: 14px;
+    font-size: 16px;
   }
 }

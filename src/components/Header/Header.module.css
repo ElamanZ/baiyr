@@ -230,7 +230,7 @@
 
   .linkText {
     display: inline;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1;
   }
@@ -278,7 +278,7 @@
   }
 
   .linkText {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .cartButton {
@@ -291,7 +291,7 @@
   .cartCount {
     min-width: 26px;
     height: 30px;
-    font-size: 13px;
+    font-size: 14px;
     border-radius: 7px;
   }
 

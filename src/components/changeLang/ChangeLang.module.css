@@ -111,12 +111,12 @@
     height: 30px;
     padding: 0 8px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .option {
     min-height: 30px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .dropdown {
