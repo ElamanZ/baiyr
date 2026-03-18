@@ -49,6 +49,30 @@
       "description": "Natural and elegant for any occasion.",
       "button": "View sets"
     }
-  }
+  },
+   "ShopsSection": {
+      "title": "Shops",
+      "workingHoursLabel": "Working hours",
+      "open2gis": "Open in 2GIS",
+      "contact": "Contact",
+      "items": {
+        "1": {
+          "address": "Bishkek, Isakeeva St. 16",
+          "time": "09:00–20:00"
+        },
+        "2": {
+          "address": "Bishkek, Razzakova St. 19",
+          "time": "09:00–20:00"
+        },
+        "3": {
+          "address": "Bishkek, Panfilova St. 304",
+          "time": "09:00–20:00"
+        },
+        "4": {
+          "address": "Bishkek, Chui Ave. 125",
+          "time": "09:00–20:00"
+        }
+      }
+    }
   }
 }

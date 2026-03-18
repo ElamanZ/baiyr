@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import WhyUsStepsSection from "@/components/home/WhyUsStepsSection/WhyUsStepsSection";
 import CertificatesSection from "@/components/home/CertificatesSection/CertificatesSection";
 import ProductsShowcaseSection from "@/components/home/ProductsShowcaseSection/ProductsShowcaseSection";
+import ShopsSection from "@/components/home/ShopsSection/ShopsSection";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,7 @@ export default function HomePage() {
       <WhyUsStepsSection />
       <CertificatesSection />
       <ProductsShowcaseSection />
+      <ShopsSection />
       <div className={styles.content}></div>
     </div>
   );
