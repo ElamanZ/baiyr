@@ -21,36 +21,42 @@ export default function ShopsSection() {
         id: 1,
         image: shopImage,
         address: t("items.1.address"),
+        url: "https://go.2gis.com/fpb7h",
         time: t("items.1.time"),
       },
       {
         id: 2,
         image: shopImage,
         address: t("items.2.address"),
+        url: "https://go.2gis.com/fpb7h",
         time: t("items.2.time"),
       },
       {
         id: 3,
         image: shopImage,
         address: t("items.3.address"),
+        url: "https://go.2gis.com/fpb7h",
         time: t("items.3.time"),
       },
       {
         id: 4,
         image: shopImage,
         address: t("items.4.address"),
+        url: "https://go.2gis.com/fpb7h",
         time: t("items.4.time"),
       },
       {
         id: 5,
         image: shopImage,
         address: t("items.4.address"),
+        url: "https://go.2gis.com/fpb7h",
         time: t("items.4.time"),
       },
       {
         id: 6,
         image: shopImage,
         address: t("items.4.address"),
+        url: "https://go.2gis.com/fpb7h",
         time: t("items.4.time"),
       },
     ],
@@ -109,7 +115,11 @@ export default function ShopsSection() {
                   <p className={styles.timeMobile}>{shop.time}</p>
 
                   <div className={styles.actions}>
-                    <button type="button" className={styles.secondaryButton}>
+                    <button
+                      type="button"
+                      className={styles.secondaryButton}
+                      onClick={() => window.open(shop.url, "_blank")}
+                    >
                       {t("open2gis")}
                     </button>
 
