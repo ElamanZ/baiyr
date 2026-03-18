@@ -74,5 +74,13 @@
         }
       }
     }
+  },
+  "Footer": {
+    "instagramLabel": "Instagram",
+    "instagramValue": "baiyr_honey",
+    "instagramButton": "打开页面",
+    "phoneLabel": "电话号码",
+    "phoneValue": "+996 (000) 45-45-45",
+    "phoneButton": "联系"
   }
 }

@@ -74,5 +74,13 @@
         }
       }
     }
+  },
+    "Footer": {
+    "instagramLabel": "Instagram",
+    "instagramValue": "baiyr_honey",
+    "instagramButton": "Open page",
+    "phoneLabel": "Phone number",
+    "phoneValue": "+996 (000) 45-45-45",
+    "phoneButton": "Message"
   }
 }

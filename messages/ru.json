@@ -74,5 +74,13 @@
         }
       }
     }
+  },
+   "Footer": {
+    "instagramLabel": "Instagram",
+    "instagramValue": "baiyr_honey",
+    "instagramButton": "Открыть страницу",
+    "phoneLabel": "Номер телефона",
+    "phoneValue": "+996 (000) 45-45-45",
+    "phoneButton": "Написать"
   }
 }

@@ -74,5 +74,13 @@
         }
       }
     }
+  },
+  "Footer": {
+    "instagramLabel": "Instagram",
+    "instagramValue": "baiyr_honey",
+    "instagramButton": "Баракты ачуу",
+    "phoneLabel": "Телефон номери",
+    "phoneValue": "+996 (000) 45-45-45",
+    "phoneButton": "Жазуу"
   }
 }
