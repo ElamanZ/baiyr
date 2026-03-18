@@ -4,12 +4,12 @@ import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import styles from "./page.module.css";
 
-import honeyImage from "@/assets/images/Honey.png";
+import honeyImage from "@/assets/images/HoneySmall.png";
 import CatalogTabs from "@/components/catalog/CatalogTabs/CatalogTabs";
 import CatalogGrid from "@/components/catalog/CatalogGrid/CatalogGrid";
 import DeliveryBanner from "@/components/catalog/DeliveryBanner/DeliveryBanner";
 
-type CategoryKey = "all" | "honey" | "products" | "giftSets";
+type CategoryKey = "all" | "honey" | "products" | "gift";
 
 export default function CatalogPage() {
   const t = useTranslations("CatalogPage");
@@ -19,7 +19,7 @@ export default function CatalogPage() {
     { key: "all" as CategoryKey, label: t("tabs.all") },
     { key: "honey" as CategoryKey, label: t("tabs.honey") },
     { key: "products" as CategoryKey, label: t("tabs.products") },
-    { key: "giftSets" as CategoryKey, label: t("tabs.giftSets") },
+    { key: "gift" as CategoryKey, label: t("tabs.giftSets") },
   ];
 
   const products = useMemo(
@@ -27,30 +27,72 @@ export default function CatalogPage() {
       {
         id: 1,
         title: t("items.whiteHoney"),
-        price: "500 Сом–1кг",
+        price: {
+          value: 500,
+          weight: t("units.kg"),
+        },
         image: honeyImage,
         category: "honey" as CategoryKey,
       },
       {
         id: 2,
         title: t("items.whiteHoney"),
-        price: "500 Сом–1кг",
+        price: {
+          value: 500,
+          weight: t("units.kg"),
+        },
         image: honeyImage,
         category: "honey" as CategoryKey,
       },
       {
         id: 3,
         title: t("items.whiteHoney"),
-        price: "500 Сом–1кг",
+        price: {
+          value: 500,
+          weight: t("units.kg"),
+        },
         image: honeyImage,
         category: "products" as CategoryKey,
       },
       {
         id: 4,
         title: t("items.whiteHoney"),
-        price: "500 Сом–1кг",
+        price: {
+          value: 500,
+          weight: t("units.kg"),
+        },
         image: honeyImage,
-        category: "giftSets" as CategoryKey,
+        category: "gift" as CategoryKey,
+      },
+      {
+        id: 5,
+        title: t("items.whiteHoney"),
+        price: {
+          value: 500,
+          weight: t("units.kg"),
+        },
+        image: honeyImage,
+        category: "gift" as CategoryKey,
+      },
+      {
+        id: 6,
+        title: t("items.whiteHoney"),
+        price: {
+          value: 500,
+          weight: t("units.kg"),
+        },
+        image: honeyImage,
+        category: "gift" as CategoryKey,
+      },
+      {
+        id: 7,
+        title: t("items.whiteHoney"),
+        price: {
+          value: 500,
+          weight: t("units.kg"),
+        },
+        image: honeyImage,
+        category: "gift" as CategoryKey,
       },
     ],
     [t],

@@ -84,6 +84,10 @@
     "phoneButton": "联系"
   },
    "CatalogPage": {
+     "price": "{value}索姆 – {weight}",
+      "units": {
+    "kg": "1千克"
+  },
     "tabs": {
       "all": "全部",
       "honey": "蜂蜜",

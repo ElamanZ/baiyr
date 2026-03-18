@@ -84,6 +84,10 @@
     "phoneButton": "Жазуу"
   },
    "CatalogPage": {
+    "price": "{value} сом – {weight}",
+     "units": {
+    "kg": "1кг"
+  },
     "tabs": {
       "all": "Баары",
       "honey": "Бал",

@@ -84,6 +84,10 @@
     "phoneButton": "Message"
   },
    "CatalogPage": {
+    "price": "{value} som – {weight}",
+     "units": {
+    "kg": "1kg"
+  },
     "tabs": {
       "all": "All",
       "honey": "Honey",

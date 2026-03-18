@@ -8,12 +8,7 @@ type Props = {
   buttonLabel: string;
 };
 
-export default function ProductCard({
-  title,
-  price,
-  image,
-  buttonLabel,
-}: Props) {
+export default function ProductCard({ title, price, image }: Props) {
   return (
     <article className={styles.card}>
       <div className={styles.imageWrap}>
