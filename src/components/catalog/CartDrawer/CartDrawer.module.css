@@ -259,10 +259,12 @@
     font-size: 17px;
   }
 
+  
+
   .deliveryText {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 137%;
+   font-size: 16px;
+   font-weight: 700;
+   line-height: 137%;
 }
 }
 
