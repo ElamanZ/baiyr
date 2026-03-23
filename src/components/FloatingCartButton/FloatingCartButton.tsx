@@ -9,7 +9,6 @@ export default function FloatingCartButton() {
   const t = useTranslations("Header");
   const { cartCount, openCart, isHydrated, isCartOpen } = useCartContext();
 
-  // 👇 ключевая логика
   if (!isHydrated || cartCount <= 0 || isCartOpen) return null;
 
   return (
