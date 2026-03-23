@@ -18,7 +18,7 @@ export default function CatalogPage() {
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const { addToCart, openCart } = useCartContext();
+  const { addToCart } = useCartContext();
 
   const tabs = [
     { key: "all" as CategoryKey, label: t("tabs.all") },
@@ -58,7 +58,6 @@ export default function CatalogPage() {
           onAddToCart={(productId, quantity) => {
             addToCart(productId, quantity);
             setSelectedProduct(null);
-            openCart();
           }}
         />
       )}

@@ -68,7 +68,7 @@ export default function ProductModal({
                 onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
                 aria-label={t("decrease")}
               >
-                −
+                <div className={styles.counterSymbol}>-</div>
               </button>
 
               <span>{quantity}</span>
@@ -78,7 +78,7 @@ export default function ProductModal({
                 onClick={() => setQuantity((prev) => prev + 1)}
                 aria-label={t("increase")}
               >
-                +
+                <div className={styles.counterSymbol}> +</div>
               </button>
             </div>
           </div>

@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 import styles from "./CartDrawer.module.css";
-import { CartItem, CheckoutForm, Product } from "@/types/product";
+import { CartItem, Product } from "@/types/product";
 import {
   buildWhatsAppMessage,
   getCartDetailedItems,
@@ -32,11 +32,6 @@ export default function CartDrawer({
 }: Props) {
   const t = useTranslations("Cart");
 
-  const [form, setForm] = useState<CheckoutForm>({
-    phone: "",
-    address: "",
-  });
-
   const items = useMemo(
     () => getCartDetailedItems(products, cart),
     [products, cart],
@@ -48,11 +43,6 @@ export default function CartDrawer({
   );
 
   const handleCheckout = () => {
-    if (!form.phone.trim() || !form.address.trim()) {
-      alert(t("alerts.fillFields"));
-      return;
-    }
-
     if (!items.length) {
       alert(t("alerts.emptyCart"));
       return;
@@ -62,19 +52,17 @@ export default function CartDrawer({
       products,
       cart,
       locale,
-      form,
       translations: {
         greeting: t("whatsapp.greeting"),
         productsTitle: t("whatsapp.productsTitle"),
         total: t("whatsapp.total"),
-        phone: t("whatsapp.phone"),
-        address: t("whatsapp.address"),
         piecesShort: t("whatsapp.piecesShort"),
         currency: t("whatsapp.currency"),
       },
     });
 
     const whatsappUrl = getWhatsAppLink(message);
+
     window.location.href = whatsappUrl;
   };
 
@@ -83,7 +71,7 @@ export default function CartDrawer({
       <aside className={styles.drawer} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <h2>{t("title")}</h2>
-          <button type="button" onClick={onClose} aria-label={t("close")}>
+          <button type="button" onClick={onClose}>
             ✕
           </button>
         </div>
@@ -116,7 +104,6 @@ export default function CartDrawer({
                           onClick={() =>
                             onQuantityChange(item.productId, item.quantity - 1)
                           }
-                          aria-label={t("decrease")}
                         >
                           −
                         </button>
@@ -128,7 +115,6 @@ export default function CartDrawer({
                           onClick={() =>
                             onQuantityChange(item.productId, item.quantity + 1)
                           }
-                          aria-label={t("increase")}
                         >
                           +
                         </button>
@@ -151,28 +137,6 @@ export default function CartDrawer({
               })}
             </div>
           )}
-
-          <div className={styles.form}>
-            <input
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel"
-              placeholder={t("phonePlaceholder")}
-              value={form.phone}
-              onChange={(e) =>
-                setForm((prev) => ({ ...prev, phone: e.target.value }))
-              }
-            />
-
-            <textarea
-              autoComplete="street-address"
-              placeholder={t("addressPlaceholder")}
-              value={form.address}
-              onChange={(e) =>
-                setForm((prev) => ({ ...prev, address: e.target.value }))
-              }
-            />
-          </div>
         </div>
 
         <div className={styles.footer}>
