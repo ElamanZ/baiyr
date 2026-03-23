@@ -89,10 +89,7 @@
 }
 
 .counterSymbol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  margin-bottom: 3px;
 }
 
 .removeButton {
