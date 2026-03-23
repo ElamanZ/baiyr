@@ -5,16 +5,20 @@ import { useSelectedLayoutSegment } from "next/navigation";
 import { useTranslations } from "next-intl";
 import styles from "./Header.module.css";
 import CatalogIcon from "../icons/CatalogIcon";
+import CartIcon from "../icons/CartIcon";
 import HomeIcon from "../icons/HomeIcon";
 import LogoWithText from "../icons/LogoWithText";
 import ChangeLang from "../changeLang/ChangeLangNav";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import Logo from "../icons/Logo";
+import { useCartContext } from "@/components/providers/CartProvider";
 
 export default function Header() {
   const t = useTranslations("Header");
   const segment = useSelectedLayoutSegment();
   const isMd = !useBreakpoint("md");
+
+  const { cartCount, openCart, isHydrated } = useCartContext();
 
   const navItems = [
     {
@@ -70,20 +74,22 @@ export default function Header() {
             );
           })}
 
-          {/* <button
-            type="button"
-            className={styles.cartButton}
-            aria-label={t("cartAria")}
-            onClick={openCart}
-          >
-            <span className={styles.icon}>
-              <CartIcon />
-            </span>
-            <span className={styles.cartText}>{t("cart")}</span>
-            <span className={styles.cartCount}>
-              {isHydrated ? cartCount : 0}
-            </span>
-          </button> */}
+          {!isMd && (
+            <button
+              type="button"
+              className={styles.cartButton}
+              aria-label={t("cartAria")}
+              onClick={openCart}
+            >
+              <span className={styles.icon}>
+                <CartIcon />
+              </span>
+              <span className={styles.cartText}>{t("cart")}</span>
+              <span className={styles.cartCount}>
+                {isHydrated ? cartCount : 0}
+              </span>
+            </button>
+          )}
 
           <ChangeLang />
         </nav>

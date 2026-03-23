@@ -27,10 +27,10 @@ export default function CartDrawer({
   cart,
   onClose,
   onQuantityChange,
-  onRemove,
   onClear,
 }: Props) {
   const t = useTranslations("Cart");
+  const delivery = useTranslations("CatalogPage");
 
   const items = useMemo(
     () => getCartDetailedItems(products, cart),
@@ -62,7 +62,6 @@ export default function CartDrawer({
     });
 
     const whatsappUrl = getWhatsAppLink(message);
-
     window.location.href = whatsappUrl;
   };
 
@@ -71,17 +70,20 @@ export default function CartDrawer({
       <aside className={styles.drawer} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <h2>{t("title")}</h2>
-          <button type="button" onClick={onClose}>
+          <button type="button" onClick={onClose} aria-label={t("close")}>
             ✕
           </button>
         </div>
 
         <div className={styles.content}>
+          <div className={styles.deliveryBanner}>
+            <span className={styles.deliveryText}>{delivery("delivery")}</span>
+          </div>
           {!items.length ? (
             <p className={styles.empty}>{t("empty")}</p>
           ) : (
-            <div className={styles.list}>
-              {items.map((item) => {
+            <div className={styles.listCard}>
+              {items.map((item, index) => {
                 const title = getLocalizedValue(item.product.title, locale);
                 const weight = getLocalizedValue(
                   item.product.price.weight,
@@ -89,49 +91,46 @@ export default function CartDrawer({
                 );
 
                 return (
-                  <div key={item.productId} className={styles.item}>
-                    <div>
-                      <strong>{title}</strong>
-                      <p>
-                        {weight} · {item.product.price.value} {t("currency")}
-                      </p>
-                    </div>
+                  <div key={item.productId}>
+                    <div className={styles.itemRow}>
+                      <div className={styles.itemInfo}>
+                        <strong className={styles.itemTitle}>{title}</strong>
 
-                    <div className={styles.itemActions}>
-                      <div className={styles.counter}>
+                        <p className={styles.itemMeta}>
+                          {weight} ({item.product.price.value} {t("currency")})
+                        </p>
+                      </div>
+
+                      <div className={styles.itemControls}>
                         <button
                           type="button"
+                          className={styles.counterButton}
                           onClick={() =>
                             onQuantityChange(item.productId, item.quantity - 1)
                           }
+                          aria-label={t("decrease")}
                         >
-                          <div className={styles.counterSymbol}>-</div>
+                          <span className={styles.counterSymbol}>−</span>
                         </button>
 
-                        <span>{item.quantity}</span>
+                        <span className={styles.quantity}>{item.quantity}</span>
 
                         <button
                           type="button"
+                          className={styles.counterButton}
                           onClick={() =>
                             onQuantityChange(item.productId, item.quantity + 1)
                           }
+                          aria-label={t("increase")}
                         >
-                          <div className={styles.counterSymbol}>+</div>
+                          <span className={styles.counterSymbol}>+</span>
                         </button>
                       </div>
-
-                      <strong>
-                        {item.total} {t("currency")}
-                      </strong>
-
-                      <button
-                        type="button"
-                        className={styles.removeButton}
-                        onClick={() => onRemove(item.productId)}
-                      >
-                        {t("remove")}
-                      </button>
                     </div>
+
+                    {index !== items.length - 1 && (
+                      <div className={styles.itemDivider} />
+                    )}
                   </div>
                 );
               })}

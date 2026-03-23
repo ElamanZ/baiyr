@@ -12,13 +12,13 @@
   width: 100%;
   max-width: 420px;
   height: 100%;
-  background: #fff;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  padding: 18px;
+  padding: 18px 18px 14px;
   border-bottom: 1px solid #e7e7e7;
   display: flex;
   align-items: center;
@@ -27,14 +27,33 @@
 
 .header h2 {
   margin: 0;
+  color: #000;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .header button {
   border: none;
-  color: #000;
   background: transparent;
-  font-size: 18px;
+  color: #000;
+  font-size: 22px;
+  line-height: 1;
   cursor: pointer;
+}
+
+.deliveryBanner {
+  text-align: center;
+  border-radius: 16px;
+  border: 1px solid #1A202C;
+  padding: 10px 36px;
+  margin-bottom: 18px;
+}
+
+.deliveryText {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 137%;
 }
 
 .content {
@@ -46,58 +65,82 @@
 
 .empty {
   margin: 0;
+  color: #555;
+  font-size: 16px;
 }
 
-.list {
+.listCard {
+  border-radius: 22px;
+  background: #e7e7e7;
+  padding: 10px 12px;
+}
+
+.itemRow {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
 }
 
-.item {
-  border: 1px solid #e5e5e5;
-  border-radius: 14px;
-  padding: 12px;
+.itemInfo {
+  min-width: 0;
+  flex: 1;
 }
 
-.item p {
-  margin: 6px 0 0;
-  color: #666;
+.itemTitle {
+  display: block;
+  margin: 0 0 4px;
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.itemActions {
-  margin-top: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.itemMeta {
+  margin: 0;
+  color: #454545;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-.counter {
+.itemControls {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
-.counter button {
+.counterButton {
   width: 28px;
   height: 28px;
   border: none;
   border-radius: 999px;
-  background: #385756;
-  color: #fff;
+  background: #a3a3a3;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
   cursor: pointer;
+  padding: 0;
 }
 
-.counterSymbol {
-  margin-bottom: 3px;
+.quantity {
+  min-width: 20px;
+  text-align: center;
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.removeButton {
-  border: none;
-  background: transparent;
-  color: #b94b4b;
-  text-align: left;
-  cursor: pointer;
+.itemDivider {
+  height: 1px;
+  background: #bebebe;
 }
 
 .footer {
@@ -109,16 +152,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: 14px;
+}
+
+.total span,
+.total strong {
+  color: #111;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .checkoutButton,
 .clearButton {
   width: 100%;
-  height: 44px;
+  height: 46px;
   border: none;
-  border-radius: 14px;
+  border-radius: 16px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .checkoutButton {
@@ -130,4 +184,236 @@
   margin-top: 10px;
   background: #ececec;
   color: #222;
+}
+
+.counterSymbol {
+  margin-bottom: 5px;
+}
+
+/* ========= LARGE DESKTOP / SMALL DRAWER WIDTH ========= */
+
+@media (max-width: 1280px) {
+  .drawer {
+    max-width: 400px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .itemTitle {
+    font-size: 17px;
+  }
+
+  .itemMeta {
+    font-size: 15px;
+  }
+
+  .total span,
+  .total strong {
+    font-size: 18px;
+  }
+}
+
+/* ========= TABLET ========= */
+
+@media (max-width: 992px) {
+  .drawer {
+    max-width: 380px;
+  }
+
+  .header {
+    padding: 16px 16px 12px;
+  }
+
+  .content,
+  .footer {
+    padding: 16px;
+  }
+
+  .listCard {
+    border-radius: 20px;
+    padding: 8px 10px;
+  }
+
+  .itemRow {
+    gap: 12px;
+    padding: 9px 0;
+  }
+
+  .itemTitle {
+    font-size: 16px;
+  }
+
+  .itemMeta {
+    font-size: 16px;
+  }
+
+  .counterButton {
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+  }
+
+  .quantity {
+    font-size: 17px;
+  }
+
+  .deliveryText {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 137%;
+}
+}
+
+/* ========= MOBILE ========= */
+
+@media (max-width: 768px) {
+  .drawer {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .header {
+    padding: 14px 14px 10px;
+  }
+
+  .header h2 {
+    font-size: 22px;
+  }
+
+  .content,
+  .footer {
+    padding: 14px;
+  }
+
+  .listCard {
+    border-radius: 18px;
+    padding: 8px 10px;
+  }
+
+  .itemRow {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .itemTitle {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+
+  .itemMeta {
+    font-size: 16px;
+  }
+
+  .itemControls {
+    gap: 10px;
+  }
+
+  .counterButton {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+
+  .quantity {
+    min-width: 18px;
+    font-size: 16px;
+  }
+
+  .total span,
+  .total strong {
+    font-size: 18px;
+  }
+
+  .checkoutButton,
+  .clearButton {
+    height: 44px;
+    font-size: 15px;
+  }
+}
+
+/* ========= SMALL MOBILE ========= */
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 12px 10px;
+  }
+
+  .content,
+  .footer {
+    padding: 12px;
+  }
+
+  .listCard {
+    border-radius: 16px;
+    padding: 8px 10px;
+  }
+
+  .itemRow {
+    gap: 8px;
+    padding: 9px 0;
+  }
+
+  .itemTitle {
+    font-size: 16px;
+  }
+
+  .itemMeta {
+    font-size: 13px;
+  }
+
+  .itemControls {
+    gap: 8px;
+  }
+
+  .counterButton {
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+  }
+
+  .quantity {
+    font-size: 15px;
+  }
+
+  .total span,
+  .total strong {
+    font-size: 17px;
+  }
+
+  .checkoutButton,
+  .clearButton {
+    height: 42px;
+    border-radius: 14px;
+    font-size: 16px;
+  }
+}
+
+/* ========= VERY SMALL ========= */
+
+@media (max-width: 360px) {
+  .itemTitle {
+    font-size: 13px;
+  }
+
+  .itemMeta {
+    font-size: 12px;
+  }
+
+  .counterButton {
+    width: 24px;
+    height: 24px;
+    font-size: 17px;
+  }
+
+  .quantity {
+    min-width: 16px;
+    font-size: 16px;
+  }
+
+  .total span,
+  .total strong {
+    font-size: 16px;
+  }
 }
