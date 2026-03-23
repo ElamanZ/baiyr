@@ -83,21 +83,48 @@
     "phoneValue": "+996 (000) 45-45-45",
     "phoneButton": "Жазуу"
   },
-   "CatalogPage": {
-    "price": "{value} сом – {weight}",
-     "units": {
-    "kg": "1кг"
-  },
+  "CatalogPage": {
     "tabs": {
       "all": "Баары",
       "honey": "Бал",
       "products": "Бал продукциясы",
       "giftSets": "Белек топтомдору"
     },
-    "delivery": "Бишкек боюнча 3000 сомдон жогору заказга акысыз жеткирүү",
-    "buy": "Сатып алуу",
-    "items": {
-      "whiteHoney": "Ак бал"
+    "delivery": "Бишкек боюнча 3000 сомдон жогору бекер жеткирүү"
+  },
+  "ProductModal": {
+    "currency": "сом",
+    "total": "Жыйынтык",
+    "addToCart": "Себетке кошуу",
+    "close": "Жабуу",
+    "increase": "Көбөйтүү",
+    "decrease": "Азайтуу"
+  },
+  "Cart": {
+    "title": "Себет",
+    "close": "Себетти жабуу",
+    "empty": "Себет бош",
+    "currency": "сом",
+    "total": "Жыйынтык",
+    "checkout": "Заказ берүү",
+    "clear": "Себетти тазалоо",
+    "remove": "Өчүрүү",
+    "phonePlaceholder": "Телефон номери",
+    "addressPlaceholder": "Жеткирүү дареги",
+    "increase": "Көбөйтүү",
+    "decrease": "Азайтуу",
+    "alerts": {
+      "fillFields": "Телефон номериңизди жана дарегиңизди киргизиңиз",
+      "emptyCart": "Себет бош"
+    },
+    "whatsapp": {
+      "greeting": "Саламатсызбы, бал заказ бергим келет!",
+      "productsTitle": "Товарлар",
+      "total": "Жыйынтык",
+      "phone": "Телефон",
+      "address": "Дарек",
+      "piecesShort": "даана",
+      "currency": "сом"
     }
   }
 }

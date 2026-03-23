@@ -83,21 +83,48 @@
     "phoneValue": "+996 (000) 45-45-45",
     "phoneButton": "Написать"
   },
-  "CatalogPage": {
-    "price": "{value} сом – {weight}",
-     "units": {
-    "kg": "1кг"
-  },
+ "CatalogPage": {
     "tabs": {
       "all": "Все",
       "honey": "Мед",
       "products": "Медовая продукция",
-      "giftSets": "Подарочные Наборы"
+      "giftSets": "Подарочные наборы"
     },
-    "delivery": "Бесплатная доставка по Бишкеку от 3000 сом",
-    "buy": "Купить",
-    "items": {
-      "whiteHoney": "Белый мед"
+    "delivery": "Бесплатная доставка по Бишкеку от 3000 сом"
+  },
+  "ProductModal": {
+    "currency": "сом",
+    "total": "Итого",
+    "addToCart": "Добавить в корзину",
+    "close": "Закрыть",
+    "increase": "Увеличить количество",
+    "decrease": "Уменьшить количество"
+  },
+  "Cart": {
+    "title": "Корзина",
+    "close": "Закрыть корзину",
+    "empty": "Корзина пуста",
+    "currency": "сом",
+    "total": "Итого",
+    "checkout": "Оформить заказ",
+    "clear": "Очистить корзину",
+    "remove": "Удалить",
+    "phonePlaceholder": "Номер телефона",
+    "addressPlaceholder": "Адрес доставки",
+    "increase": "Увеличить количество",
+    "decrease": "Уменьшить количество",
+    "alerts": {
+      "fillFields": "Введите номер телефона и адрес",
+      "emptyCart": "Корзина пуста"
+    },
+    "whatsapp": {
+      "greeting": "Здравствуйте, хочу сделать заказ меда!",
+      "productsTitle": "Товары",
+      "total": "Итого",
+      "phone": "Телефон",
+      "address": "Адрес",
+      "piecesShort": "шт",
+      "currency": "сом"
     }
   }
 }

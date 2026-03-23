@@ -1,19 +1,24 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import styles from "./page.module.css";
-
-import honeyImage from "@/assets/images/HoneySmall.png";
 import CatalogTabs from "@/components/catalog/CatalogTabs/CatalogTabs";
 import CatalogGrid from "@/components/catalog/CatalogGrid/CatalogGrid";
 import DeliveryBanner from "@/components/catalog/DeliveryBanner/DeliveryBanner";
-
-type CategoryKey = "all" | "honey" | "products" | "gift";
+import { CategoryKey, Product } from "@/types/product";
+import { ProductData } from "@/assets/product/ProductData";
+import ProductModal from "@/components/catalog/ProductModal/ProductModal";
+import { useCartContext } from "@/components/providers/CartProvider";
 
 export default function CatalogPage() {
   const t = useTranslations("CatalogPage");
+  const locale = useLocale();
+
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
+  const { addToCart, openCart } = useCartContext();
 
   const tabs = [
     { key: "all" as CategoryKey, label: t("tabs.all") },
@@ -22,86 +27,10 @@ export default function CatalogPage() {
     { key: "gift" as CategoryKey, label: t("tabs.giftSets") },
   ];
 
-  const products = useMemo(
-    () => [
-      {
-        id: 1,
-        title: t("items.whiteHoney"),
-        price: {
-          value: 500,
-          weight: t("units.kg"),
-        },
-        image: honeyImage,
-        category: "honey" as CategoryKey,
-      },
-      {
-        id: 2,
-        title: t("items.whiteHoney"),
-        price: {
-          value: 500,
-          weight: t("units.kg"),
-        },
-        image: honeyImage,
-        category: "honey" as CategoryKey,
-      },
-      {
-        id: 3,
-        title: t("items.whiteHoney"),
-        price: {
-          value: 500,
-          weight: t("units.kg"),
-        },
-        image: honeyImage,
-        category: "products" as CategoryKey,
-      },
-      {
-        id: 4,
-        title: t("items.whiteHoney"),
-        price: {
-          value: 500,
-          weight: t("units.kg"),
-        },
-        image: honeyImage,
-        category: "gift" as CategoryKey,
-      },
-      {
-        id: 5,
-        title: t("items.whiteHoney"),
-        price: {
-          value: 500,
-          weight: t("units.kg"),
-        },
-        image: honeyImage,
-        category: "gift" as CategoryKey,
-      },
-      {
-        id: 6,
-        title: t("items.whiteHoney"),
-        price: {
-          value: 500,
-          weight: t("units.kg"),
-        },
-        image: honeyImage,
-        category: "gift" as CategoryKey,
-      },
-      {
-        id: 7,
-        title: t("items.whiteHoney"),
-        price: {
-          value: 500,
-          weight: t("units.kg"),
-        },
-        image: honeyImage,
-        category: "gift" as CategoryKey,
-      },
-    ],
-    [t],
-  );
-
-  const filteredProducts =
-    activeCategory === "all"
-      ? products
-      : products.filter((item) => item.category === activeCategory);
+  const filteredProducts = useMemo(() => {
+    if (activeCategory === "all") return ProductData;
+    return ProductData.filter((item) => item.category === activeCategory);
+  }, [activeCategory]);
 
   return (
     <section className={styles.page}>
@@ -114,8 +43,25 @@ export default function CatalogPage() {
 
         <DeliveryBanner text={t("delivery")} />
 
-        <CatalogGrid products={filteredProducts} buttonLabel={t("buy")} />
+        <CatalogGrid
+          products={filteredProducts}
+          locale={locale}
+          onCardClick={setSelectedProduct}
+        />
       </div>
+
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          locale={locale}
+          onClose={() => setSelectedProduct(null)}
+          onAddToCart={(productId, quantity) => {
+            addToCart(productId, quantity);
+            setSelectedProduct(null);
+            openCart();
+          }}
+        />
+      )}
     </section>
   );
 }

@@ -11,11 +11,14 @@ import LogoWithText from "../icons/LogoWithText";
 import ChangeLang from "../changeLang/ChangeLangNav";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import Logo from "../icons/Logo";
+import { useCartContext } from "@/components/providers/CartProvider";
 
 export default function Header() {
   const t = useTranslations("Header");
   const segment = useSelectedLayoutSegment();
   const isMd = !useBreakpoint("md");
+
+  const { cartCount, openCart, isHydrated } = useCartContext();
 
   const navItems = [
     {
@@ -71,12 +74,19 @@ export default function Header() {
             );
           })}
 
-          <button className={styles.cartButton} aria-label={t("cartAria")}>
+          <button
+            type="button"
+            className={styles.cartButton}
+            aria-label={t("cartAria")}
+            onClick={openCart}
+          >
             <span className={styles.icon}>
               <CartIcon />
             </span>
             <span className={styles.cartText}>{t("cart")}</span>
-            <span className={styles.cartCount}>1</span>
+            <span className={styles.cartCount}>
+              {isHydrated ? cartCount : 0}
+            </span>
           </button>
 
           <ChangeLang />

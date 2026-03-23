@@ -84,20 +84,47 @@
     "phoneButton": "联系"
   },
    "CatalogPage": {
-     "price": "{value}索姆 – {weight}",
-      "units": {
-    "kg": "1千克"
-  },
     "tabs": {
       "all": "全部",
       "honey": "蜂蜜",
-      "products": "蜂蜜制品",
-      "giftSets": "礼品套装"
+      "products": "蜂产品",
+      "giftSets": "礼盒"
     },
-    "delivery": "比什凯克满 3000 索姆免费配送",
-    "buy": "购买",
-    "items": {
-      "whiteHoney": "白蜂蜜"
+    "delivery": "满3000索姆比什凯克免费配送"
+  },
+  "ProductModal": {
+    "currency": "索姆",
+    "total": "总计",
+    "addToCart": "加入购物车",
+    "close": "关闭",
+    "increase": "增加数量",
+    "decrease": "减少数量"
+  },
+  "Cart": {
+    "title": "购物车",
+    "close": "关闭购物车",
+    "empty": "购物车为空",
+    "currency": "索姆",
+    "total": "总计",
+    "checkout": "下单",
+    "clear": "清空购物车",
+    "remove": "删除",
+    "phonePlaceholder": "电话号码",
+    "addressPlaceholder": "收货地址",
+    "increase": "增加数量",
+    "decrease": "减少数量",
+    "alerts": {
+      "fillFields": "请输入电话号码和地址",
+      "emptyCart": "购物车为空"
+    },
+    "whatsapp": {
+      "greeting": "您好，我想订购蜂蜜！",
+      "productsTitle": "商品",
+      "total": "总计",
+      "phone": "电话",
+      "address": "地址",
+      "piecesShort": "件",
+      "currency": "索姆"
     }
   }
 }

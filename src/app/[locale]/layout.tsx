@@ -1,10 +1,10 @@
 import "../globals.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 import { routing } from "@/i18n/routing";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { CartProvider } from "@/components/providers/CartProvider";
+import SiteChrome from "@/components/layout/SiteChrome";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin", "cyrillic-ext"],
@@ -29,9 +29,9 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={plusJakartaSans.className}>
         <NextIntlClientProvider locale={locale}>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <CartProvider>
+            <SiteChrome>{children}</SiteChrome>
+          </CartProvider>
         </NextIntlClientProvider>
       </body>
     </html>

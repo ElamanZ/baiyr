@@ -83,21 +83,48 @@
     "phoneValue": "+996 (000) 45-45-45",
     "phoneButton": "Message"
   },
-   "CatalogPage": {
-    "price": "{value} som – {weight}",
-     "units": {
-    "kg": "1kg"
-  },
+  "CatalogPage": {
     "tabs": {
       "all": "All",
       "honey": "Honey",
-      "products": "Honey products",
-      "giftSets": "Gift Sets"
+      "products": "Bee products",
+      "giftSets": "Gift sets"
     },
-    "delivery": "Free delivery in Bishkek from 3000 som",
-    "buy": "Buy",
-    "items": {
-      "whiteHoney": "White honey"
+    "delivery": "Free delivery in Bishkek for orders over 3000 KGS"
+  },
+  "ProductModal": {
+    "currency": "KGS",
+    "total": "Total",
+    "addToCart": "Add to cart",
+    "close": "Close",
+    "increase": "Increase quantity",
+    "decrease": "Decrease quantity"
+  },
+  "Cart": {
+    "title": "Cart",
+    "close": "Close cart",
+    "empty": "Your cart is empty",
+    "currency": "KGS",
+    "total": "Total",
+    "checkout": "Checkout",
+    "clear": "Clear cart",
+    "remove": "Remove",
+    "phonePlaceholder": "Phone number",
+    "addressPlaceholder": "Delivery address",
+    "increase": "Increase quantity",
+    "decrease": "Decrease quantity",
+    "alerts": {
+      "fillFields": "Please enter your phone number and address",
+      "emptyCart": "Cart is empty"
+    },
+    "whatsapp": {
+      "greeting": "Hello, I would like to place an order for honey!",
+      "productsTitle": "Products",
+      "total": "Total",
+      "phone": "Phone",
+      "address": "Address",
+      "piecesShort": "pcs",
+      "currency": "KGS"
     }
   }
 }
