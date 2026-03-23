@@ -105,7 +105,7 @@ export default function CartDrawer({
                             onQuantityChange(item.productId, item.quantity - 1)
                           }
                         >
-                          −
+                          <div className={styles.counterSymbol}>-</div>
                         </button>
 
                         <span>{item.quantity}</span>
@@ -116,7 +116,7 @@ export default function CartDrawer({
                             onQuantityChange(item.productId, item.quantity + 1)
                           }
                         >
-                          +
+                          <div className={styles.counterSymbol}>+</div>
                         </button>
                       </div>
 
