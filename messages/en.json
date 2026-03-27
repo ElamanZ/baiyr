@@ -28,6 +28,7 @@
       "certificateAlt": "Certificate {number}"
     },
      "ProductsShowcaseSection": {
+    "btn": "Product catalogue",
     "prev": "Previous product",
     "next": "Next product",
     "items": {

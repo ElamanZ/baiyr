@@ -28,6 +28,7 @@
       "certificateAlt": "证书 {number}"
     },
       "ProductsShowcaseSection": {
+    "btn": "商品目录",
     "prev": "上一个商品",
     "next": "下一个商品",
     "items": {

@@ -28,6 +28,7 @@
       "certificateAlt": "{number}-сертификат"
     },
     "ProductsShowcaseSection": {
+    "btn": "Продукт каталогу",
     "prev": "Мурунку товар",
     "next": "Кийинки товар",
     "items": {

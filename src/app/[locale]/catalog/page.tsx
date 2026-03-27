@@ -10,12 +10,17 @@ import { CategoryKey, Product } from "@/types/product";
 import { ProductData } from "@/assets/product/ProductData";
 import ProductModal from "@/components/catalog/ProductModal/ProductModal";
 import { useCartContext } from "@/components/providers/CartProvider";
+import { useSearchParams } from "next/navigation";
 
 export default function CatalogPage() {
   const t = useTranslations("CatalogPage");
   const locale = useLocale();
+  const searchParams = useSearchParams();
+  const isGift = searchParams.get("gift");
 
-  const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
+  const [activeCategory, setActiveCategory] = useState<CategoryKey>(
+    isGift ? "gift" : "all",
+  );
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const { addToCart } = useCartContext();

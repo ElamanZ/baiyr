@@ -28,6 +28,7 @@
       "certificateAlt": "Сертификат {number}"
     },
     "ProductsShowcaseSection": {
+    "btn": "Каталог продукции",
     "prev": "Предыдущий товар",
     "next": "Следующий товар",
     "items": {

@@ -7,6 +7,8 @@ import styles from "./ProductsShowcaseSection.module.css";
 
 import honeyImage from "@/assets/images/Honey.png";
 import giftImage from "@/assets/images/Gift.png";
+import { useRouter } from "next/navigation";
+import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 
 const productImages = {
   honey: honeyImage,
@@ -17,6 +19,7 @@ const productImages = {
 export default function ProductsShowcaseSection() {
   const t = useTranslations("HomePage.ProductsShowcaseSection");
   const [activeIndex, setActiveIndex] = useState(0);
+  const router = useRouter();
 
   const products = useMemo(
     () => [
@@ -58,6 +61,14 @@ export default function ProductsShowcaseSection() {
     setActiveIndex((prev) => (prev + 1) % products.length);
   };
 
+  const openCatalogue = () => {
+    router.push("/catalog");
+  };
+
+  const openGift = () => {
+    router.push("/catalog?gift=true");
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -84,10 +95,11 @@ export default function ProductsShowcaseSection() {
           <button
             type="button"
             className={`${styles.arrowButton} ${styles.arrowLeft}`}
-            aria-label={t("prev")}
             onClick={goPrev}
           >
-            <span className={styles.arrowIcon}>←</span>
+            <span className={styles.arrowIcon}>
+              <ArrowRightIcon size={18} />
+            </span>
           </button>
 
           <div className={styles.mobileViewport}>
@@ -121,12 +133,17 @@ export default function ProductsShowcaseSection() {
           <button
             type="button"
             className={`${styles.arrowButton} ${styles.arrowRight}`}
-            aria-label={t("next")}
             onClick={goNext}
           >
-            <span className={styles.arrowIcon}>→</span>
+            <span className={styles.arrowIcon}>
+              <ArrowRightIcon size={18} />
+            </span>
           </button>
         </div>
+
+        <button className={styles.catalogueButton} onClick={openCatalogue}>
+          {t("btn")}
+        </button>
 
         <article className={styles.giftCard}>
           <div className={styles.giftImageWrap}>
@@ -145,7 +162,11 @@ export default function ProductsShowcaseSection() {
               <p className={styles.giftDescription}>{t("gift.description")}</p>
             </div>
 
-            <button type="button" className={styles.giftButton}>
+            <button
+              type="button"
+              className={styles.giftButton}
+              onClick={openGift}
+            >
               {t("gift.button")}
             </button>
           </div>
