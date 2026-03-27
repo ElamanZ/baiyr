@@ -126,5 +126,15 @@
       "piecesShort": "даана",
       "currency": "сом"
     }
+  },
+    "CheckoutModal": {
+    "title": "Заказ берүү",
+    "phonePlaceholder": "Телефон номери",
+    "addressPlaceholder": "Жеткирүү дареги",
+    "submit": "Улантуу",
+    "close": "Жабуу",
+    "alerts": {
+      "fillFields": "Телефон номериңизди жана дарегиңизди киргизиңиз"
+    }
   }
 }

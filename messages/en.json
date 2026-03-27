@@ -126,5 +126,15 @@
       "piecesShort": "pcs",
       "currency": "KGS"
     }
+  },
+   "CheckoutModal": {
+    "title": "Checkout",
+    "phonePlaceholder": "Phone number",
+    "addressPlaceholder": "Delivery address",
+    "submit": "Continue",
+    "close": "Close",
+    "alerts": {
+      "fillFields": "Please enter your phone number and address"
+    }
   }
 }

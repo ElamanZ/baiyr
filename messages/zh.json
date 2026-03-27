@@ -126,5 +126,15 @@
       "piecesShort": "件",
       "currency": "索姆"
     }
+  },
+   "CheckoutModal": {
+    "title": "填写订单信息",
+    "phonePlaceholder": "电话号码",
+    "addressPlaceholder": "收货地址",
+    "submit": "继续",
+    "close": "关闭",
+    "alerts": {
+      "fillFields": "请输入电话号码和地址"
+    }
   }
 }

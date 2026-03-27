@@ -126,5 +126,15 @@
       "piecesShort": "шт",
       "currency": "сом"
     }
+  },
+   "CheckoutModal": {
+    "title": "Оформление заказа",
+    "phonePlaceholder": "Номер телефона",
+    "addressPlaceholder": "Адрес доставки",
+    "submit": "Продолжить",
+    "close": "Закрыть",
+    "alerts": {
+      "fillFields": "Введите номер телефона и адрес"
+    }
   }
 }

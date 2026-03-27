@@ -1,4 +1,4 @@
-import { CartItem, CheckoutForm, LocaleKey, Product } from "@/types/product";
+import { CartItem, LocaleKey, Product } from "@/types/product";
 
 export const WHATSAPP_PHONE = "996502707800";
 
@@ -35,18 +35,15 @@ export function buildWhatsAppMessage(params: {
   products: Product[];
   cart: CartItem[];
   locale: string;
-  form: CheckoutForm;
   translations: {
     greeting: string;
     productsTitle: string;
     total: string;
-    phone: string;
-    address: string;
     piecesShort: string;
     currency: string;
   };
 }) {
-  const { products, cart, locale, form, translations } = params;
+  const { products, cart, locale, translations } = params;
 
   const items = getCartDetailedItems(products, cart);
   const total = items.reduce((sum, item) => sum + item.total, 0);
@@ -56,7 +53,7 @@ export function buildWhatsAppMessage(params: {
       const title = getLocalizedValue(item.product.title, locale);
       const weight = getLocalizedValue(item.product.price.weight, locale);
 
-      return `${title} (${weight}) - ${item.quantity} ${translations.piecesShort} - ${item.total} ${translations.currency}`;
+      return `• ${title} (${weight}) — ${item.quantity} ${translations.piecesShort} — ${item.total} ${translations.currency}`;
     })
     .join("\n");
 
@@ -67,9 +64,6 @@ export function buildWhatsAppMessage(params: {
     itemsText,
     "",
     `${translations.total}: ${total} ${translations.currency}`,
-    "",
-    `${translations.phone}: ${form.phone}`,
-    `${translations.address}: ${form.address}`,
   ].join("\n");
 }
 

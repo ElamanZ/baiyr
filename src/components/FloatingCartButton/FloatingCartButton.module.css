@@ -1,0 +1,199 @@
+.button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 70;
+
+  width: 90px;
+  height: 90px;
+  border: none;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #223c3b;
+  color: #ffffff;
+  cursor: pointer;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+
+  animation: cartFadeIn 0.22s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+/* ICON */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon :global(svg) {
+  width: 42px;
+  height: 42px;
+}
+
+/* COUNT */
+
+.count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+
+  border: 2px solid #223c3b;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #223c3b;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+@keyframes cartFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+@media (max-width: 1280px) {
+  .button {
+    width: 82px;
+    height: 82px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .icon :global(svg) {
+    width: 36px;
+    height: 36px;
+  }
+
+  .count {
+    min-width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .button {
+    width: 76px;
+    height: 76px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .icon :global(svg) {
+    width: 32px;
+    height: 32px;
+  }
+
+  .count {
+    min-width: 24px;
+    height: 24px;
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .button {
+    width: 70px;
+    height: 70px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .icon :global(svg) {
+    width: 30px;
+    height: 30px;
+  }
+
+  .count {
+    top: -6px;
+    right: -6px;
+    min-width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .button {
+    width: 64px;
+    height: 64px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .icon :global(svg) {
+    width: 28px;
+    height: 28px;
+  }
+
+  .count {
+    min-width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+}
+
+
+
+@media (max-width: 360px) {
+  .button {
+    width: 60px;
+    height: 60px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .icon :global(svg) {
+    width: 26px;
+    height: 26px;
+  }
+
+  .count {
+    min-width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+}

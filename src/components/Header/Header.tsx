@@ -74,20 +74,22 @@ export default function Header() {
             );
           })}
 
-          <button
-            type="button"
-            className={styles.cartButton}
-            aria-label={t("cartAria")}
-            onClick={openCart}
-          >
-            <span className={styles.icon}>
-              <CartIcon />
-            </span>
-            <span className={styles.cartText}>{t("cart")}</span>
-            <span className={styles.cartCount}>
-              {isHydrated ? cartCount : 0}
-            </span>
-          </button>
+          {!isMd && (
+            <button
+              type="button"
+              className={styles.cartButton}
+              aria-label={t("cartAria")}
+              onClick={openCart}
+            >
+              <span className={styles.icon}>
+                <CartIcon />
+              </span>
+              <span className={styles.cartText}>{t("cart")}</span>
+              <span className={styles.cartCount}>
+                {isHydrated ? cartCount : 0}
+              </span>
+            </button>
+          )}
 
           <ChangeLang />
         </nav>
