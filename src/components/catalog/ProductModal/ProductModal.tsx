@@ -24,10 +24,11 @@ export default function ProductModal({
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = prevOverflow;
     };
   }, []);
 
@@ -40,70 +41,101 @@ export default function ProductModal({
     [product.price.value, quantity],
   );
 
+  const handleAddToCart = () => {
+    onAddToCart(product.id, quantity);
+    onClose();
+  };
+
   return (
-    <div className={styles.overlay} onClick={onClose}>
+    <div
+      className={styles.overlay}
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-modal-title"
+    >
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <button
+          type="button"
+          className={styles.iconClose}
+          onClick={onClose}
+          aria-label={t("close")}
+        >
+          <div>×</div>
+        </button>
+
         <div className={styles.imageWrap}>
           <Image
             src={product.image}
             alt={title}
             fill
             className={styles.image}
-            sizes="(max-width: 768px) 90vw, 420px"
+            sizes="(max-width: 767px) 100vw, 700px"
           />
         </div>
 
-        <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <div className={styles.content}>
+          <h2 id="product-modal-title" className={styles.title}>
+            {title}
+          </h2>
 
-        <div className={styles.infoBox}>
-          <div className={styles.row}>
-            <span>
-              {weight} ({product.price.value} {t("currency")})
-            </span>
+          <p className={styles.description}>{description}</p>
 
-            <div className={styles.counter}>
-              <button
-                type="button"
-                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
-                aria-label={t("decrease")}
-              >
-                <div className={styles.counterSymbol}>-</div>
-              </button>
+          <div className={styles.infoBox}>
+            <div className={styles.row}>
+              <span className={styles.priceText}>
+                {weight} ({product.price.value} {t("currency")})
+              </span>
 
-              <span>{quantity}</span>
+              <div className={styles.counter}>
+                <button
+                  type="button"
+                  className={styles.counterButton}
+                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                  aria-label={t("decrease")}
+                >
+                  −
+                </button>
 
-              <button
-                type="button"
-                onClick={() => setQuantity((prev) => prev + 1)}
-                aria-label={t("increase")}
-              >
-                <div className={styles.counterSymbol}> +</div>
-              </button>
+                <span className={styles.quantity}>{quantity}</span>
+
+                <button
+                  type="button"
+                  className={styles.counterButton}
+                  onClick={() => setQuantity((prev) => prev + 1)}
+                  aria-label={t("increase")}
+                >
+                  +
+                </button>
+              </div>
             </div>
-          </div>
 
-          <div className={styles.divider} />
+            <div className={styles.divider} />
 
-          <div className={styles.totalRow}>
-            <span>{t("total")}:</span>
-            <strong>
-              {totalPrice} {t("currency")}
-            </strong>
+            <div className={styles.totalRow}>
+              <span>{t("total")}:</span>
+              <strong>
+                {totalPrice} {t("currency")}
+              </strong>
+            </div>
+
+            <button
+              type="button"
+              className={styles.addButton}
+              onClick={handleAddToCart}
+            >
+              {t("addToCart")}
+            </button>
           </div>
 
           <button
             type="button"
-            className={styles.addButton}
-            onClick={() => onAddToCart(product.id, quantity)}
+            className={styles.closeButton}
+            onClick={onClose}
           >
-            {t("addToCart")}
+            {t("close")}
           </button>
         </div>
-
-        <button type="button" className={styles.closeButton} onClick={onClose}>
-          {t("close")}
-        </button>
       </div>
     </div>
   );
