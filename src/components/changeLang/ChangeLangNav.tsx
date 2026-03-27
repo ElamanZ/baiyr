@@ -11,9 +11,9 @@ export default function ChangeLang() {
   const [open, setOpen] = useState(false);
 
   const langs = [
-    { code: "ky", label: "КЫРГЫЗЧА", short: "KG" },
+    { code: "ky", label: "КЫРГЫЗЧА", short: "КЫР" },
     { code: "en", label: "ENGLISH", short: "EN" },
-    { code: "ru", label: "РУССКИЙ", short: "RU" },
+    { code: "ru", label: "РУССКИЙ", short: "РУ" },
     { code: "zh", label: "中文", short: "中" },
   ];
 
@@ -54,7 +54,7 @@ export default function ChangeLang() {
               onClick={() => changeLang(l.code)}
             >
               <span className={styles.full}>{l.label}</span>
-              <span className={styles.short}>{l.short}</span>
+              <span className={styles.short}>{l.label}</span>
             </button>
           ))}
         </div>
