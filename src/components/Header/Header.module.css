@@ -194,7 +194,7 @@
 /* mobile */
 @media (max-width: 768px) {
   .container {
-    padding: 14px 12px;
+    padding: 10px 12px;
     gap: 8px;
   }
 
@@ -248,7 +248,7 @@
 /* small mobile */
 @media (max-width: 480px) {
   .container {
-    padding: 14px 10px;
+    padding: 8px 10px;
     gap: 6px;
   }
 
