@@ -11,7 +11,7 @@ export const ProductData: Product[] = [
       zh: "白蜂蜜",
     },
     description: {
-      ru: "Натуральный мёд с нежным вкусом.",
+      ru: "Натуральный мед с нежным вкусом.",
       ky: "Табигый бал назик даамы менен.",
       en: "Natural honey with a sweet taste.",
       zh: "天然蜂蜜，味道温和。",

@@ -47,30 +47,31 @@
 }
 
 .heroText h1 {
-  max-width: 690px;
+  max-width: 790px;
   font-size: 70px;
-  line-height: 1.1;
+  line-height: 1.2;
   font-weight: 700;
-  letter-spacing: 4%;
+  letter-spacing: 3%;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .heroText p {
-  max-width: 620px;
+  max-width: 420px;
   font-size: 24px;
-  line-height: 1.4;
+  line-height: 1.5;
   font-weight: 500;
   color: #fff;
 }
 
 .button {
-  width: 304px;
-  height: 44px;
+  width: 577px;
+  height: 70px;
   background-color: #ffc060;
   border-radius: 16px;
   border: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 24px;
   color: #223c3b;
   cursor: pointer;
 }
@@ -82,6 +83,7 @@
   }
 
   .heroText h1 {
+    max-width: 660px;
     font-size: 56px;
   }
 
@@ -93,13 +95,14 @@
 /* tablet */
 @media (max-width: 992px) {
   .heroImageWrap {
-    min-height: 460px;
+    min-height: 500px;
   }
 
 
   .heroText h1 {
-    max-width: 400px;
+    max-width: 500px;
     font-size: 42px;
+    margin-bottom: 14px;
   }
 
   .heroText p {
@@ -115,11 +118,11 @@
 /* mobile */
 @media (max-width: 768px) {
   .heroImageWrap {
-    min-height: 340px;
+    min-height: 440px;
   }
 
   .container {
-    padding: 10px 12px;
+    padding: 10px 16px;
   }
 
   .heroText {
@@ -127,7 +130,7 @@
   }
 
   .heroText h1 {
-    max-width: 280px;
+    max-width: 350px;
     font-size: 30px;
   }
 
@@ -146,11 +149,11 @@
 /* small mobile */
 @media (max-width: 480px) {
   .heroImageWrap {
-    min-height: 310px;
+    min-height: 380px;
   }
 
   .container {
-    padding: 8px 10px;
+    padding: 8px 16px;
   }
 
   .heroText {
@@ -158,7 +161,7 @@
   }
 
   .heroText h1 {
-    max-width: 250px;
+    max-width: 270px;
     font-size: 24px;
   }
 
@@ -168,8 +171,8 @@
   }
 
   .button {
-    width: 180px;
-    height: 38px;
+    width: 100%;
+    height: 48px;
     font-size: 16px;
   }
 }
