@@ -1,9 +1,204 @@
 import { Product } from "@/types/product";
 import honeyImage from "./images/propolis.png";
+import perga1Image from "./images/perga1.png";
+import perga2Image from "./images/perga2.png";
+import plca1Image from "./images/plca1.png";
+import plca2Image from "./images/plca2.png";
+import nastoika1 from "./images/nastoika1.png";
+import nastoika2 from "./images/nastoika2.png";
 
 export const ProductData: Product[] = [
   {
     id: 1,
+    title: {
+      ru: "Перга",
+      ky: "Прополис",
+      en: "Propolis",
+      zh: "蜂胶",
+    },
+    description: {
+      ru: "Натуральный мёд с нежным вкусом.",
+      ky: "Иммунитет үчүн табигый продукт.",
+      en: "Natural product for immunity.",
+      zh: "增强免疫力的天然产品。",
+    },
+    price: {
+      value: 280,
+      weight: {
+        ru: "100 г",
+        ky: "100 г",
+        en: "100 g",
+        zh: "100克",
+      },
+    },
+    image: perga1Image,
+    category: "products",
+  },
+
+  {
+    id: 2,
+    title: {
+      ru: "Перга",
+      ky: "Прополис",
+      en: "Propolis",
+      zh: "蜂胶",
+    },
+    description: {
+      ru: "Натуральный мёд с нежным вкусом.",
+      ky: "Иммунитет үчүн табигый продукт.",
+      en: "Natural product for immunity.",
+      zh: "增强免疫力的天然产品。",
+    },
+    price: {
+      value: 840,
+      weight: {
+        ru: "300 г",
+        ky: "300 г",
+        en: "300 g",
+        zh: "300克",
+      },
+    },
+    image: perga2Image,
+    category: "products",
+  },
+
+  {
+    id: 3,
+    title: {
+      ru: "Пыльца",
+      ky: "Прополис",
+      en: "Propolis",
+      zh: "蜂胶",
+    },
+    description: {
+      ru: "Натуральный мёд с нежным вкусом.",
+      ky: "Иммунитет үчүн табигый продукт.",
+      en: "Natural product for immunity.",
+      zh: "增强免疫力的天然产品。",
+    },
+    price: {
+      value: 180,
+      weight: {
+        ru: "100 г",
+        ky: "100 г",
+        en: "100 g",
+        zh: "100克",
+      },
+    },
+    image: plca1Image,
+    category: "products",
+  },
+
+  {
+    id: 4,
+    title: {
+      ru: "Пыльца",
+      ky: "Прополис",
+      en: "Propolis",
+      zh: "蜂胶",
+    },
+    description: {
+      ru: "Натуральный мёд с нежным вкусом.",
+      ky: "Иммунитет үчүн табигый продукт.",
+      en: "Natural product for immunity.",
+      zh: "增强免疫力的天然产品。",
+    },
+    price: {
+      value: 540,
+      weight: {
+        ru: "300 г",
+        ky: "300 г",
+        en: "300 g",
+        zh: "300克",
+      },
+    },
+    image: plca2Image,
+    category: "products",
+  },
+
+  {
+    id: 5,
+    title: {
+      ru: "Прополис",
+      ky: "Прополис",
+      en: "Propolis",
+      zh: "蜂胶",
+    },
+    description: {
+      ru: "Натуральный мёд с нежным вкусом.",
+      ky: "Иммунитет үчүн табигый продукт.",
+      en: "Natural product for immunity.",
+      zh: "增强免疫力的天然产品。",
+    },
+    price: {
+      value: 120,
+      weight: {
+        ru: "10 г",
+        ky: "10 г",
+        en: "10 g",
+        zh: "10克",
+      },
+    },
+    image: perga1Image,
+    category: "products",
+  },
+
+  {
+    id: 6,
+    title: {
+      ru: "Настойка прополиса",
+      ky: "Прополис",
+      en: "Propolis",
+      zh: "蜂胶",
+    },
+    description: {
+      ru: "Натуральный мёд с нежным вкусом.",
+      ky: "Иммунитет үчүн табигый продукт.",
+      en: "Natural product for immunity.",
+      zh: "增强免疫力的天然产品。",
+    },
+    price: {
+      value: 240,
+      weight: {
+        ru: "0.1 л",
+        ky: "0.1 л",
+        en: "0.1 l",
+        zh: "0.1克",
+      },
+    },
+    image: nastoika1,
+    category: "products",
+  },
+
+  {
+    id: 7,
+    title: {
+      ru: "Настойка пчелиного подмора",
+      ky: "Прополис",
+      en: "Propolis",
+      zh: "蜂胶",
+    },
+    description: {
+      ru: "Натуральный мёд с нежным вкусом.",
+      ky: "Иммунитет үчүн табигый продукт.",
+      en: "Natural product for immunity.",
+      zh: "增强免疫力的天然产品。",
+    },
+    price: {
+      value: 240,
+      weight: {
+        ru: "0.1 л",
+        ky: "0.1 л",
+        en: "0.1 l",
+        zh: "0.1克",
+      },
+    },
+    image: nastoika2,
+    category: "products",
+  },
+
+  {
+    id: 8,
     title: {
       ru: "Белый мед",
       ky: "Ак бал",
@@ -17,7 +212,7 @@ export const ProductData: Product[] = [
       zh: "天然蜂蜜，味道温和。",
     },
     price: {
-      value: 500,
+      value: 280,
       weight: {
         ru: "1 кг",
         ky: "1 кг",
@@ -30,88 +225,7 @@ export const ProductData: Product[] = [
   },
 
   {
-    id: 2,
-    title: {
-      ru: "Горный мед",
-      ky: "Тоолуу бал",
-      en: "Mountain Honey",
-      zh: "高山蜂蜜",
-    },
-    description: {
-      ru: "Собран в горах, насыщенный вкус.",
-      ky: "Тоодон чогултулган, даамы бай.",
-      en: "Rich honey collected in mountains.",
-      zh: "来自高山的浓郁蜂蜜。",
-    },
-    price: {
-      value: 650,
-      weight: {
-        ru: "1 кг",
-        ky: "1 кг",
-        en: "1 kg",
-        zh: "1公斤",
-      },
-    },
-    image: honeyImage,
-    category: "honey",
-  },
-
-  {
-    id: 3,
-    title: {
-      ru: "Прополис",
-      ky: "Прополис",
-      en: "Propolis",
-      zh: "蜂胶",
-    },
-    description: {
-      ru: "Натуральный продукт для иммунитета.",
-      ky: "Иммунитет үчүн табигый продукт.",
-      en: "Natural product for immunity.",
-      zh: "增强免疫力的天然产品。",
-    },
-    price: {
-      value: 300,
-      weight: {
-        ru: "100 г",
-        ky: "100 г",
-        en: "100 g",
-        zh: "100克",
-      },
-    },
-    image: honeyImage,
-    category: "products",
-  },
-
-  {
-    id: 4,
-    title: {
-      ru: "Пчелиная пыльца",
-      ky: "Аары чаңы",
-      en: "Bee Pollen",
-      zh: "蜂花粉",
-    },
-    description: {
-      ru: "Богат витаминами и минералами.",
-      ky: "Витаминдерге бай.",
-      en: "Rich in vitamins and minerals.",
-      zh: "富含维生素和矿物质。",
-    },
-    price: {
-      value: 400,
-      weight: {
-        ru: "200 г",
-        ky: "200 г",
-        en: "200 g",
-        zh: "200克",
-      },
-    },
-    image: honeyImage,
-    category: "products",
-  },
-
-  {
-    id: 5,
+    id: 8888,
     title: {
       ru: "Подарочный набор меда",
       ky: "Бал белек топтому",

@@ -31,6 +31,9 @@ export default function ProductCard({ product, locale, onClick }: Props) {
         <div className={styles.button}>
           {product.price.value} сом - {weight}
         </div>
+
+        {/* tooltip */}
+        <span className={styles.tooltip}>{title}</span>
       </button>
     </article>
   );
