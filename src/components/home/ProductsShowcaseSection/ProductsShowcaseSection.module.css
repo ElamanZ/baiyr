@@ -3,6 +3,21 @@
   padding: 0 0 24px;
 }
 
+.topLine {
+  width: 100%;
+  height: 1px;
+  background: #c9cecd;
+  margin-bottom: 18px;
+}
+
+.title {
+  margin: 0 0 22px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #223c3b;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -302,6 +317,15 @@
   .giftButton {
     max-width: 260px;
   } 
+
+   .topLine {
+    margin-bottom: 14px;
+  }
+
+  .title {
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
   
 }
 

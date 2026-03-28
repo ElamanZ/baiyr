@@ -10,7 +10,7 @@ export default function HomePage() {
     <div className={styles.page}>
       <HomeHero />
       <WhyUsStepsSection />
-      <CertificatesSection />
+      {/* <CertificatesSection /> */}
       <ProductsShowcaseSection />
       <ShopsSection />
       <div className={styles.content}></div>

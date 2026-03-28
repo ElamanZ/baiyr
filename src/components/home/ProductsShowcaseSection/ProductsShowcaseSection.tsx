@@ -72,6 +72,9 @@ export default function ProductsShowcaseSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        <div className={styles.topLine} />
+        <h2 className={styles.title}>{t("btn")}</h2>
+
         <div className={styles.desktopGrid}>
           {products.map((item) => (
             <article key={item.key} className={styles.productCard}>
