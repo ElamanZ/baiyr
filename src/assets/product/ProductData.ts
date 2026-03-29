@@ -6,6 +6,7 @@ import plca1Image from "./images/plca1.png";
 import plca2Image from "./images/plca2.png";
 import nastoika1 from "./images/nastoika1.png";
 import nastoika2 from "./images/nastoika2.png";
+import test2 from "./images/test2.png";
 
 export const ProductData: Product[] = [
   {
@@ -31,7 +32,7 @@ export const ProductData: Product[] = [
         zh: "100克",
       },
     },
-    image: perga1Image,
+    image: test2,
     category: "products",
   },
 

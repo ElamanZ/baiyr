@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./ProductCard.module.css";
+import catalogCardBg from "@/assets/catalog/product-modal-bg.png";
 import { Product } from "@/types/product";
 import { getLocalizedValue } from "@/lib/catalog";
 
@@ -16,14 +17,19 @@ export default function ProductCard({ product, locale, onClick }: Props) {
   return (
     <article className={styles.card}>
       <button type="button" className={styles.cardInner} onClick={onClick}>
-        <div className={styles.imageWrap}>
-          <Image
-            src={product.image}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 50vw, 25vw"
-            className={styles.image}
-          />
+        <div
+          className={styles.imageWrap}
+          style={{ backgroundImage: `url(${catalogCardBg.src})` }}
+        >
+          <div className={styles.imageCrop}>
+            <Image
+              src={product.image}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className={styles.image}
+            />
+          </div>
         </div>
 
         <h3 className={styles.title}>{title}</h3>

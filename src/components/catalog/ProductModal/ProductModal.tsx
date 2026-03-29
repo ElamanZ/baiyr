@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "./ProductModal.module.css";
+import productModalBg from "@/assets/catalog/product-modal-bg.png";
 import { Product } from "@/types/product";
 import { getLocalizedValue } from "@/lib/catalog";
 
@@ -64,14 +65,19 @@ export default function ProductModal({
           <div>×</div>
         </button>
 
-        <div className={styles.imageWrap}>
-          <Image
-            src={product.image}
-            alt={title}
-            fill
-            className={styles.image}
-            sizes="(max-width: 767px) 100vw, 700px"
-          />
+        <div
+          className={styles.imageWrap}
+          style={{ backgroundImage: `url(${productModalBg.src})` }}
+        >
+          <div className={styles.imageCrop}>
+            <Image
+              src={product.image}
+              alt={title}
+              fill
+              className={styles.image}
+              sizes="(max-width: 767px) 100vw, 700px"
+            />
+          </div>
         </div>
 
         <div className={styles.content}>
