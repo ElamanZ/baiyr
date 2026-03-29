@@ -1,11 +1,9 @@
 .section {
   width: 100%;
   padding: 64px 0 72px;
-  background: linear-gradient(
-    to bottom,
-    #FFE2B6 0%,
-    #FFFFFF 100%
-  );
+  background: linear-gradient(to bottom,
+      #FFE2B6 0%,
+      #FFFFFF 100%);
 }
 
 .container {
@@ -18,7 +16,7 @@
 .title {
   margin: 0 0 56px;
   text-align: center;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 1.12;
   font-weight: 500;
   color: #223c3b;
@@ -85,13 +83,15 @@
 
 .cardFirst .connector {
   width: 220px;
-  top: 80px;      /* от текста к картинке второй */
+  top: 80px;
+  /* от текста к картинке второй */
   right: -140px;
 }
 
 .cardSecond .connector {
   width: 220px;
-  top: 80px;      /* от текста второй к картинке третьей */
+  top: 80px;
+  /* от текста второй к картинке третьей */
   right: -140px;
 }
 
@@ -104,19 +104,19 @@
 
   .title {
     margin-bottom: 48px;
-    font-size: 42px;
+    font-size: 38px;
   }
 
   .grid {
     column-gap: 44px;
   }
 
-.cardFirst .connector,
-.cardSecond .connector {
-  width: 140px;
-  top: 70px;      
-  right: -100px;
-}
+  .cardFirst .connector,
+  .cardSecond .connector {
+    width: 140px;
+    top: 70px;
+    right: -100px;
+  }
 
 }
 
@@ -153,9 +153,9 @@
 
   .cardFirst .connector,
   .cardSecond .connector {
-   width: 90px;
-  top: 80px;      
-  right: -70px;
+    width: 90px;
+    top: 80px;
+    right: -70px;
   }
 
 }

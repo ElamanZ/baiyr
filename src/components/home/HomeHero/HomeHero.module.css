@@ -16,12 +16,10 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(34, 60, 59, 0.72) 0%,
-    rgba(34, 60, 59, 0.38) 38%,
-    rgba(34, 60, 59, 0.12) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(34, 60, 59, 0.72) 0%,
+      rgba(34, 60, 59, 0.38) 38%,
+      rgba(34, 60, 59, 0.12) 100%);
   z-index: 1;
 }
 
@@ -48,7 +46,7 @@
 
 .heroText h1 {
   max-width: 790px;
-  font-size: 70px;
+  font-size: 64px;
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: 3%;
