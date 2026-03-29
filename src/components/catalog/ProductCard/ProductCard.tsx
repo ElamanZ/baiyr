@@ -1,6 +1,6 @@
-import Image from "next/image";
 import styles from "./ProductCard.module.css";
 import catalogCardBg from "@/assets/catalog/product-modal-bg.webp";
+import CatalogProductImage from "@/components/catalog/CatalogProductImage/CatalogProductImage";
 import { Product } from "@/types/product";
 import { getLocalizedValue } from "@/lib/catalog";
 
@@ -8,9 +8,16 @@ type Props = {
   product: Product;
   locale: string;
   onClick: () => void;
+  /** Первые карточки в каталоге — приоритетная загрузка (LCP) */
+  imagePriority?: boolean;
 };
 
-export default function ProductCard({ product, locale, onClick }: Props) {
+export default function ProductCard({
+  product,
+  locale,
+  onClick,
+  imagePriority = false,
+}: Props) {
   const title = getLocalizedValue(product.title, locale);
   const weight = getLocalizedValue(product.price.weight, locale);
 
@@ -22,12 +29,12 @@ export default function ProductCard({ product, locale, onClick }: Props) {
           style={{ backgroundImage: `url(${catalogCardBg.src})` }}
         >
           <div className={styles.imageCrop}>
-            <Image
+            <CatalogProductImage
               src={product.image}
               alt={title}
-              fill
-              sizes="(max-width: 768px) 50vw, 25vw"
-              className={styles.image}
+              sizes="(max-width: 768px) 50vw, (max-width: 1100px) 34vw, 26vw"
+              priority={imagePriority}
+              imgClassName={styles.image}
             />
           </div>
         </div>

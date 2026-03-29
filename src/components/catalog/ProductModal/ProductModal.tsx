@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "./ProductModal.module.css";
 import productModalBg from "@/assets/catalog/product-modal-bg.webp";
+import CatalogProductImage from "@/components/catalog/CatalogProductImage/CatalogProductImage";
 import { Product } from "@/types/product";
 import { getLocalizedValue } from "@/lib/catalog";
 
@@ -70,12 +70,12 @@ export default function ProductModal({
           style={{ backgroundImage: `url(${productModalBg.src})` }}
         >
           <div className={styles.imageCrop}>
-            <Image
+            <CatalogProductImage
               src={product.image}
               alt={title}
-              fill
-              className={styles.image}
-              sizes="(max-width: 767px) 100vw, 700px"
+              imgClassName={styles.image}
+              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 500px, 560px"
+              priority
             />
           </div>
         </div>

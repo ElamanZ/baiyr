@@ -13,11 +13,12 @@ type Props = {
 export default function CatalogGrid({ products, locale, onCardClick }: Props) {
   return (
     <div className={styles.grid}>
-      {products.map((item) => (
+      {products.map((item, index) => (
         <ProductCard
           key={item.id}
           product={item}
           locale={locale}
+          imagePriority={index < 8}
           onClick={() => onCardClick(item)}
         />
       ))}
