@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import styles from "./ProductModal.module.css";
-import productModalBg from "@/assets/catalog/product-modal-bg.png";
+import productModalBg from "@/assets/catalog/product-modal-bg.webp";
 import { Product } from "@/types/product";
 import { getLocalizedValue } from "@/lib/catalog";
 

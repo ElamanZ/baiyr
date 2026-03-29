@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./ProductCard.module.css";
-import catalogCardBg from "@/assets/catalog/product-modal-bg.png";
+import catalogCardBg from "@/assets/catalog/product-modal-bg.webp";
 import { Product } from "@/types/product";
 import { getLocalizedValue } from "@/lib/catalog";
 
