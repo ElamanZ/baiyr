@@ -10,8 +10,11 @@
   "HomePage": {
     "homeHero": {
       "title": "Natural honey from Kyrgyzstan",
+      "titleLine1": "Natural honey",
+      "titleLine2": "from Kyrgyzstan",
       "line1": "Own apiaries in the mountains of Kyrgyzstan.",
       "line2": "Wholesale supply for shops and cafes.",
+      "catalogButton": "Catalog",
       "button": "Contact"
     },
     "whyUsTitle": "Why choose us",

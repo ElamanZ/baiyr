@@ -3,15 +3,14 @@
   top: 0;
   z-index: 50;
   width: 100%;
-  background: #223c3b;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  background: #223C3B;
 }
 
 .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 16px clamp(12px, 4vw, 64px);
+  padding: 16px var(--page-padding-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,7 +113,7 @@
   padding: 0 10px;
   border-radius: 8px;
   background: #ffffff;
-  color: #223c3b;
+  color: #223C3B;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -125,8 +124,7 @@
 /* large desktop */
 @media (max-width: 1280px) {
   .container {
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding: 14px var(--page-padding-x);
   }
 
   .navLink {
@@ -194,7 +192,7 @@
 /* mobile */
 @media (max-width: 768px) {
   .container {
-    padding: 10px 16px;
+    padding: 10px var(--page-padding-x);
     gap: 8px;
   }
 
@@ -248,7 +246,7 @@
 /* small mobile */
 @media (max-width: 480px) {
   .container {
-    padding: 8px 16px;
+    padding: 8px var(--page-padding-x);
     gap: 6px;
   }
 

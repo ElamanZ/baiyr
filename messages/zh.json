@@ -10,8 +10,11 @@
   "HomePage": {
     "homeHero": {
       "title": "来自吉尔吉斯斯坦的天然蜂蜜",
+      "titleLine1": "来自吉尔吉斯斯坦的",
+      "titleLine2": "天然蜂蜜",
       "line1": "我们在吉尔吉斯斯坦山区拥有自己的蜂场。",
       "line2": "为商店和咖啡馆提供批发供应。",
+      "catalogButton": "目录",
       "button": "联系"
     },
     "whyUsTitle": "为什么选择我们",

@@ -11,7 +11,7 @@
   justify-content: space-between;
   gap: 32px;
   margin: 0 auto;
-  padding: 24px clamp(12px, 4vw, 64px);
+  padding: 24px var(--page-padding-x);
 }
 
 .logo {
@@ -105,7 +105,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
-    padding: 20px clamp(12px, 4vw, 40px);
+    padding: 20px var(--page-padding-x);
   }
 
   .logo {
@@ -126,7 +126,7 @@
 /* mobile */
 @media (max-width: 768px) {
   .container {
-    padding: 16px 12px;
+    padding: 16px var(--page-padding-x);
     gap: 16px;
   }
 
@@ -172,7 +172,7 @@
   }
 
   .container {
-    padding: 14px 10px;
+    padding: 14px var(--page-padding-x);
   }
 
   .cardTop {

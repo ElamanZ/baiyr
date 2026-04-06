@@ -15,14 +15,14 @@
   font-size: 30px;
   line-height: 1.2;
   font-weight: 500;
-  color: #223c3b;
+  color: #f6f0de;
 }
 
 .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 clamp(12px, 4vw, 64px);
+  padding: 0 var(--page-padding-x);
 }
 
 /* desktop top cards */

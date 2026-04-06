@@ -32,7 +32,7 @@
   border: none;
   border-bottom: 2px solid transparent;
   background: transparent;
-  color: #989898;
+  color: rgba(246, 240, 222, 0.55);
   font-size: 20px;
   font-weight: 600;
   line-height: 1;
@@ -41,8 +41,8 @@
 }
 
 .tab[data-active="true"] {
-  color: #1a202c;
-  border-bottom-color: #1a202c;
+  color: #ffc060;
+  border-bottom-color: #ffc060;
 }
 
 /* desktop-medium */
@@ -55,8 +55,8 @@
 /* tablet */
 @media (max-width: 900px) {
   .tabsWrap {
-    margin: 0 -12px;
-    padding: 0 12px;
+    margin-inline: calc(-1 * var(--page-padding-x));
+    padding-inline: var(--page-padding-x);
   }
 
   .tab {
@@ -68,8 +68,8 @@
 /* mobile */
 @media (max-width: 768px) {
   .tabsWrap {
-    margin: 0 -12px;
-    padding: 0 12px;
+    margin-inline: calc(-1 * var(--page-padding-x));
+    padding-inline: var(--page-padding-x);
   }
 
   .tab {
@@ -81,8 +81,8 @@
 /* small mobile */
 @media (max-width: 480px) {
   .tabsWrap {
-    margin: 0 -10px;
-    padding: 0 10px;
+    margin-inline: calc(-1 * var(--page-padding-x));
+    padding-inline: var(--page-padding-x);
   }
 
   .tab {
