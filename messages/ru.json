@@ -31,30 +31,30 @@
       "certificateAlt": "Сертификат {number}"
     },
     "ProductsShowcaseSection": {
-    "btn": "Каталог продукции",
-    "prev": "Предыдущий товар",
-    "next": "Следующий товар",
-    "items": {
-      "honey": {
-        "title": "Мед",
-        "description": "Природная энергия и ежедневная поддержка иммунитета."
+      "btn": "Каталог продукции",
+      "prev": "Предыдущий товар",
+      "next": "Следующий товар",
+      "items": {
+        "honey": {
+          "title": "Мед",
+          "description": "Натуральная природная энергия и ежедневная поддержка иммунитета"
+        },
+        "perga": {
+          "title": "Перга",
+          "description": "Поддерживает силы, восстановление и тонус организма."
+        },
+        "pollen": {
+          "title": "Пыльца",
+          "description": "Богата витаминами и питательными веществами для организма."
+        }
       },
-      "perga": {
-        "title": "Перга",
-        "description": "Поддерживает силы, восстановление и тонус."
-      },
-      "pollen": {
-        "title": "Пыльца",
-        "description": "Богата витаминами и питательными веществами для организма."
+      "gift": {
+        "title": "Подарочные наборы",
+        "description": "Натурально и элегантно для любого случая.",
+        "button": "Смотреть наборы"
       }
     },
-    "gift": {
-      "title": "Подарочные наборы",
-      "description": "Натурально и элегантно для любого случая.",
-      "button": "Смотреть наборы"
-    }
-  },
-  "ShopsSection": {
+    "ShopsSection": {
       "title": "Магазины",
       "workingHoursLabel": "Время работы",
       "open2gis": "Открыть в 2GIS",
@@ -79,7 +79,7 @@
       }
     }
   },
-   "Footer": {
+  "Footer": {
     "instagramLabel": "Instagram",
     "instagramValue": "baiyr_honey",
     "instagramButton": "Открыть страницу",
@@ -87,7 +87,7 @@
     "phoneValue": "+996 (000) 45-45-45",
     "phoneButton": "Написать"
   },
- "CatalogPage": {
+  "CatalogPage": {
     "tabs": {
       "all": "Все",
       "honey": "Мед",
@@ -131,7 +131,7 @@
       "currency": "сом"
     }
   },
-   "CheckoutModal": {
+  "CheckoutModal": {
     "title": "Оформление заказа",
     "phonePlaceholder": "Номер телефона",
     "addressPlaceholder": "Адрес доставки",

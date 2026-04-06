@@ -12,10 +12,10 @@ const ArrowRightIcon = ({ size = 24 }: Props) => {
     >
       <path
         d="M1 5H11M11 5L7 1M11 5L7 9"
-        stroke="white"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke="#223C3B"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );

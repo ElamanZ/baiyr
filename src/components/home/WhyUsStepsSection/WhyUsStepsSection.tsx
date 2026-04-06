@@ -37,46 +37,48 @@ export default function WhyUsStepsSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>{t("whyUsTitle")}</h2>
+        <div className={styles.background}>
+          <h2 className={styles.title}>{t("whyUsTitle")}</h2>
 
-        <div className={styles.grid}>
-          {items.map((item, index) => (
-            <article
-              key={item.id}
-              className={`${styles.card} ${
-                index === 0 ? styles.cardFirst : ""
-              } ${index === 1 ? styles.cardSecond : ""}`}
-            >
-              <div className={styles.imageWrap}>
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  width={168}
-                  height={112}
-                  className={styles.image}
-                />
-              </div>
+          <div className={styles.grid}>
+            {items.map((item, index) => (
+              <article
+                key={item.id}
+                className={`${styles.card} ${
+                  index === 0 ? styles.cardFirst : ""
+                } ${index === 1 ? styles.cardSecond : ""}`}
+              >
+                <div className={styles.imageWrap}>
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    width={168}
+                    height={112}
+                    className={styles.image}
+                  />
+                </div>
 
-              <h3 className={styles.cardTitle}>
-                {item.title.split("\n").map((linePart) => (
-                  <span key={linePart} className={styles.line}>
-                    {linePart}
-                  </span>
-                ))}
-              </h3>
+                <h3 className={styles.cardTitle}>
+                  {item.title.split("\n").map((linePart) => (
+                    <span key={linePart} className={styles.line}>
+                      {linePart}
+                    </span>
+                  ))}
+                </h3>
 
-              <p className={styles.description}>{item.description}</p>
+                <p className={styles.description}>{item.description}</p>
 
-              {(index === 0 || index === 1) && (
-                <Image
-                  src={line}
-                  alt=""
-                  className={styles.connector}
-                  aria-hidden
-                />
-              )}
-            </article>
-          ))}
+                {(index === 0 || index === 1) && (
+                  <Image
+                    src={line}
+                    alt=""
+                    className={styles.connector}
+                    aria-hidden
+                  />
+                )}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

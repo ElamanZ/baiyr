@@ -30,31 +30,31 @@
       "title": "Quality and certificates",
       "certificateAlt": "Certificate {number}"
     },
-     "ProductsShowcaseSection": {
-    "btn": "Product catalogue",
-    "prev": "Previous product",
-    "next": "Next product",
-    "items": {
-      "honey": {
-        "title": "Honey",
-        "description": "Natural energy and daily immune support."
+    "ProductsShowcaseSection": {
+      "btn": "Product catalogue",
+      "prev": "Previous product",
+      "next": "Next product",
+      "items": {
+        "honey": {
+          "title": "Honey",
+          "description": "Natural energy and daily immune support."
+        },
+        "perga": {
+          "title": "Perga",
+          "description": "Supports strength, recovery, and overall body tone"
+        },
+        "pollen": {
+          "title": "Pollen",
+          "description": "Rich in vitamins and nutrients for the body."
+        }
       },
-      "perga": {
-        "title": "Perga",
-        "description": "Supports strength, recovery and tone."
-      },
-      "pollen": {
-        "title": "Pollen",
-        "description": "Rich in vitamins and nutrients for the body."
+      "gift": {
+        "title": "Gift sets",
+        "description": "Natural and elegant for any occasion.",
+        "button": "View sets"
       }
     },
-    "gift": {
-      "title": "Gift sets",
-      "description": "Natural and elegant for any occasion.",
-      "button": "View sets"
-    }
-  },
-   "ShopsSection": {
+    "ShopsSection": {
       "title": "Shops",
       "workingHoursLabel": "Working hours",
       "open2gis": "Open in 2GIS",
@@ -79,7 +79,7 @@
       }
     }
   },
-    "Footer": {
+  "Footer": {
     "instagramLabel": "Instagram",
     "instagramValue": "baiyr_honey",
     "instagramButton": "Open page",
@@ -131,7 +131,7 @@
       "currency": "KGS"
     }
   },
-   "CheckoutModal": {
+  "CheckoutModal": {
     "title": "Checkout",
     "phonePlaceholder": "Phone number",
     "addressPlaceholder": "Delivery address",

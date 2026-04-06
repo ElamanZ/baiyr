@@ -1,9 +1,6 @@
 .section {
   width: 100%;
   padding: 64px 0 72px;
-  background: linear-gradient(to bottom,
-      #FFE2B6 0%,
-      #FFFFFF 100%);
 }
 
 .container {
@@ -13,13 +10,20 @@
   padding: 0 var(--page-padding-x);
 }
 
+.background {
+  background: #1E3131;
+  margin: 0 auto;
+  padding: 80px 0;
+  border-radius: 32px;
+}
+
 .title {
   margin: 0 0 56px;
   text-align: center;
   font-size: 40px;
   line-height: 1.12;
   font-weight: 500;
-  color: #223c3b;
+  color: #fff;
 }
 
 .grid {
@@ -58,7 +62,7 @@
   font-size: 24px;
   line-height: 1.48;
   font-weight: 600;
-  color: #223c3b;
+  color: #fff;
 }
 
 .line {
@@ -70,7 +74,7 @@
   font-size: 16px;
   line-height: 1.35;
   font-weight: 400;
-  color: #223c3b;
+  color: #fff;
 }
 
 /* decorative connectors */
@@ -167,6 +171,11 @@
     padding: 28px 0 34px;
   }
 
+  .background {
+    padding: 35px 0;
+    border-radius: 16px;
+  }
+
   .connector {
     display: none;
   }
@@ -181,7 +190,7 @@
     font-size: 22px;
     line-height: 1.18;
     font-weight: 500;
-    color: #223c3b;
+    color: #fff;
   }
 
   .grid {
@@ -205,13 +214,13 @@
     font-size: 18px;
     line-height: 1.45;
     font-weight: 500;
-    color: #223c3b;
+    color: #fff;
   }
 
   .description {
     font-size: 14px;
     line-height: 1.35;
     font-weight: 400;
-    color: #223c3b;
+    color: #fff;
   }
 }

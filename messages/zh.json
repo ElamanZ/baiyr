@@ -30,31 +30,31 @@
       "title": "质量与证书",
       "certificateAlt": "证书 {number}"
     },
-      "ProductsShowcaseSection": {
-    "btn": "商品目录",
-    "prev": "上一个商品",
-    "next": "下一个商品",
-    "items": {
-      "honey": {
-        "title": "蜂蜜",
-        "description": "天然能量与日常免疫支持。"
+    "ProductsShowcaseSection": {
+      "btn": "商品目录",
+      "prev": "上一个商品",
+      "next": "下一个商品",
+      "items": {
+        "honey": {
+          "title": "蜂蜜",
+          "description": "天然能量与日常免疫支持。"
+        },
+        "perga": {
+          "title": "蜂粮",
+          "description": "有助于提升体力、促进恢复并增强整体身体活力"
+        },
+        "pollen": {
+          "title": "蜂花粉",
+          "description": "富含维生素和营养成分。"
+        }
       },
-      "perga": {
-        "title": "蜂粮",
-        "description": "帮助恢复体力并保持活力。"
-      },
-      "pollen": {
-        "title": "蜂花粉",
-        "description": "富含维生素和营养成分。"
+      "gift": {
+        "title": "礼品套装",
+        "description": "天然且精致，适合任何场合。",
+        "button": "查看套装"
       }
     },
-    "gift": {
-      "title": "礼品套装",
-      "description": "天然且精致，适合任何场合。",
-      "button": "查看套装"
-    }
-  },
-   "ShopsSection": {
+    "ShopsSection": {
       "title": "门店",
       "workingHoursLabel": "营业时间",
       "open2gis": "在 2GIS 中打开",
@@ -87,7 +87,7 @@
     "phoneValue": "+996 (000) 45-45-45",
     "phoneButton": "联系"
   },
-   "CatalogPage": {
+  "CatalogPage": {
     "tabs": {
       "all": "全部",
       "honey": "蜂蜜",
@@ -131,7 +131,7 @@
       "currency": "索姆"
     }
   },
-   "CheckoutModal": {
+  "CheckoutModal": {
     "title": "填写订单信息",
     "phonePlaceholder": "电话号码",
     "addressPlaceholder": "收货地址",

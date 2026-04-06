@@ -1,21 +1,6 @@
 .section {
   width: 100%;
-  padding: 0 0 24px;
-}
-
-.topLine {
-  width: 100%;
-  height: 1px;
-  background: #c9cecd;
-  margin-bottom: 18px;
-}
-
-.title {
-  margin: 0 0 22px;
-  font-size: 30px;
-  line-height: 1.2;
-  font-weight: 500;
-  color: #f6f0de;
+  padding: 0 0 clamp(24px, 4vw, 40px);
 }
 
 .container {
@@ -25,112 +10,141 @@
   padding: 0 var(--page-padding-x);
 }
 
-/* desktop top cards */
+/* ——— Desktop product grid ——— */
 
 .desktopGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(24px, 5vw, 72px);
-}
-
-.productCard {
-  width: 100%;
-  min-height: 416px;
-  border: 1px solid #6f8583;
-  border-radius: 24px;
-  background: #f7f7f7;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.productImageWrap {
-  width: 230px;
-  height: 250px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
+  grid-template-columns: repeat(3, minmax(0, 300px));
+  gap: 60px;
   justify-content: center;
 }
 
+.productCard {
+  margin: 0;
+}
+
+.productCardVisual {
+  position: relative;
+  width: 300px;
+  max-width: 100%;
+  height: 432px;
+  margin: 0 auto;
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+}
+
 .productImage {
-  width: 230px;
-  height: 250px;
-  object-fit: contain;
-  display: block;
+  object-fit: cover;
+}
+
+.productOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 60, 59, 0) 25%,
+    rgba(34, 60, 59, 0.88) 80%,
+    #223c3b 100%
+  );
+  pointer-events: none;
+}
+
+.productText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px 18px 22px;
+  text-align: center;
+  z-index: 1;
 }
 
 .productTitle {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   font-size: 24px;
   line-height: 1.2;
   font-weight: 600;
-  color: #111111;
+  color: #ffffff;
 }
 
 .productDescription {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.45;
   font-weight: 400;
-  color: #333333;
-   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Количество строк */
+  color: #ffffff;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* mobile slider */
-
-.mobileSlider {
-  display: none;
-}
-
-/* bottom gift card */
-
-.giftCard {
-  width: 100%;
-  max-width: 843px;
-  min-height: 276px;
-  margin: 0 auto;
-  border: 1px solid #6f8583;
-  border-radius: 24px;
-  background: #f7f7f7;
-  padding: 24px;
+.catalogueButton {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  border: none;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #223c3b;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
-.giftImageWrap {
-  flex: 0 0 442px;
-  width: 442px;
-  height: 228px;
-  border-radius: 16px;
+.catalogueButton:hover {
+  opacity: 0.92;
+}
+
+/* ——— Gift block desktop ——— */
+
+.giftCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  align-items: stretch;
+  min-height: 505px;
+}
+
+.giftImageCol {
+  position: relative;
+  min-height: 505px;
+  border-radius: 24px 0 0 24px;
   overflow: hidden;
 }
 
 .giftImage {
-  width: 442px;
-  height: 228px;
   object-fit: cover;
-  display: block;
 }
 
-.giftContent {
-  flex: 1;
+.giftContentCol {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+  padding: 32px 24px;
+  background: #1e3131;
+  border-radius: 0 24px 24px 0;
+  text-align: center;
 }
 
 .giftTextBlock {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  max-width: 420px;
+  align-self: center;
+  width: 100%;
 }
 
 .giftTitle {
@@ -138,7 +152,7 @@
   font-size: 24px;
   line-height: 1.2;
   font-weight: 600;
-  color: #111111;
+  color: #ffffff;
 }
 
 .giftDescription {
@@ -146,226 +160,131 @@
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  color: #333333;
+  color: #ffffff;
 }
 
 .giftButton {
-  width: 100%;
-  max-width: 315px;
-  height: 48px;
-  border: none;
-  border-radius: 16px;
-  background: #385756;
-  color: #fff;
-  font-size: 16px;
-  line-height: 1;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-
-.catalogueButton {
-  width: 100%;
-  height: 60px;
-  border: none;
-  border-radius: 16px;
-  background: #385756;
-  color: #fff;
-  font-size: 22px;
-  line-height: 150%;
-  font-weight: 500;
-  letter-spacing: 3%;
-  cursor: pointer;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-
-/* large tablet */
-
-@media (max-width: 1200px) {
-
-  .productCard {
-    min-height: 364px;
-  }
-
-  .productImageWrap {
-    width: 200px;
-    height: 220px;
-    margin-bottom: 20px;
-  }
-
-  .productImage {
-    width: 200px;
-    height: 220px;
-  }
-
-  .productTitle {
-    font-size: 22px;
-  }
-
-  .catalogueButton {
-    height: 50px;
-    font-size: 20px;
-  }
-
-}
-
-@media (max-width: 900px) {
-
-  .productCard {
-    min-height: 290px;
-    padding: 12px;
-    border-radius: 18px;
-  }
-
-  .productImageWrap {
-    width: 150px;
-    height: 170px;
-    margin-bottom: 14px;
-  }
-
-  .productImage {
-    width: 150px;
-    height: 170px;
-  }
-
-  .productTitle {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .productDescription {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .giftCard {
-    padding: 16px;
-    gap: 16px;
-    min-height: 220px;
-  }
-
-  .giftImageWrap {
-    flex: 0 0 340px;
-    width: 340px;
-    height: 220px;
-  }
-
-  .giftImage {
-    width: 340px;
-    height: 220px;
-  }
-
-
-}
-
-@media (max-width: 650px) {
-  .container {
-    padding: 0 12px;
-  }
-
-  .productCard {
-    min-height: 280px;
-    padding: 10px;
-    border-radius: 14px;
-  }
-
-  .productImageWrap {
-    width: 120px;
-    height: 140px;
-    margin-bottom: 10px;
-  }
-
-  .productImage {
-    width: 120px;
-    height: 140px;
-  }
-
-  .productTitle {
-    font-size: 16px;
-  }
-
-  .productDescription {
-    font-size: 14px;
-  }
-
-  .giftCard {
-    padding: 12px;
-    gap: 12px;
-    min-height: 190px;
-  }
-
-  .giftImageWrap {
-    flex: 0 0 270px;
-    width: 270px;
-    height: 190px;
-  }
-
-  .giftImage {
-    width: 270px;
-    height: 190px;
-  }
-  .giftTitle {
-    font-size: 20px;
-  }
-
-  .giftDescription {
-    font-size: 14px;
-  }
-
-  .giftButton {
-    max-width: 260px;
-  } 
-
-   .topLine {
-    margin-bottom: 14px;
-  }
-
-  .title {
-    margin-bottom: 16px;
-    font-size: 22px;
-  }
-  
-}
-
-/* mobile slider only on very small screens */
-
-@media (max-width: 499px) {
-  .section {
-    padding-bottom: 20px;
-  }
-
-  .container {
-    padding: 0 12px;
-  }
-
-  .desktopGrid {
-    display: none;
-  }
-
-  .mobileSlider {
-    display: grid;
-    grid-template-columns: auto minmax(0, 220px) auto;
-    align-items: center;
-    justify-content: center;
-    column-gap: 25px;
-  }
-
-.arrowButton {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
-  background: #385756; /* цвет круга */
-  color: #fff;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #223c3b;
+  font-size: clamp(16px, 2.2vw, 22px);
+  line-height: 1.1;
+  font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.giftButton:hover {
+  opacity: 0.92;
+}
+
+/* ——— Mobile slider (hidden on desktop) ——— */
+
+.mobileSlider {
+  display: none;
+}
+
+.mobileViewport {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.mobileTrack {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.mobileSlide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+}
+
+.productCardMobile {
+  margin: 0;
+  padding: 0;
+}
+
+.productCardVisualMobile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 300 / 432;
+  max-height: 432px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.productOverlayMobile {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 60, 59, 0) 32%,
+    rgba(34, 60, 59, 0.88) 75%,
+    #223c3b 100%
+  );
+  pointer-events: none;
+}
+
+.productTextMobile {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 14px 18px;
+  text-align: center;
+  z-index: 1;
+}
+
+.productTitleMobile {
+  margin: 0 0 6px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.productDescriptionMobile {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #ffffff;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.arrowButton {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  color: #223c3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+}
+
+.arrowButton:hover {
+  opacity: 0.9;
 }
 
 .arrowIcon {
@@ -375,128 +294,81 @@
 }
 
 .arrowIcon svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
 }
 
 .arrowLeft .arrowIcon {
   transform: rotate(180deg);
 }
 
-  .mobileViewport {
-    width: 220px;
-    overflow: hidden;
+/* ——— ≤1024: fluid cards ——— */
+
+@media (max-width: 1024px) {
+  .desktopGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 24px);
   }
 
-  .mobileTrack {
-    display: flex;
-    transition: transform 0.35s ease;
+  .productCardVisual {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 300 / 432;
+    max-height: 432px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktopGrid {
+    display: none;
   }
 
-  .mobileSlide {
-    width: 220px;
-    flex: 0 0 220px;
+  .mobileSlider {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
   }
 
   .catalogueButton {
     height: 48px;
+    margin-top: 22px;
+    margin-bottom: 22px;
     font-size: 16px;
-  }
-
-  .productCardMobile {
-    width: 220px;
-    min-height: 275px;
-    border: 1px solid #6f8583;
-    border-radius: 8px;
-    background: #f7f7f7;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .productImageWrapMobile {
-    width: 154px;
-    height: 167px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .productImageMobile {
-    width: 154px;
-    height: 167px;
-    object-fit: contain;
-    display: block;
-  }
-
-  .productTitleMobile {
-    margin: 0 0 8px;
-    font-size: 18px;
-    line-height: 1.25;
     font-weight: 600;
-    color: #111111;
-  }
-
-  .productDescriptionMobile {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.45;
-    font-weight: 400;
-    color: #333333;
   }
 
   .giftCard {
-    min-height: 240px;
-    border-radius: 16px;
-    padding: 12px;
-    gap: 16px;
+    display: flex;
     flex-direction: column;
+    min-height: 0;
+  }
+
+  .giftImageCol {
+    position: relative;
+    height: 287px;
+    min-height: 287px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .giftContentCol {
+    border-radius: 0 0 16px 16px;
+    padding: 22px 20px 24px;
+    gap: 18px;
     align-items: stretch;
-  }
-
-  .giftImageWrap {
-    flex: none;
-    width: 100%;
-    height: 120px;
-    border-radius: 8px;
-    background: #c8c8c8;
-  }
-
-  .giftImage {
-    width: 100%;
-    height: 100%;
-  }
-
-  .giftContent {
-    gap: 8px;
-  }
-
-  .giftTextBlock {
-    gap: 8px;
   }
 
   .giftTitle {
     font-size: 18px;
-    line-height: 1.25;
   }
 
   .giftDescription {
     font-size: 14px;
-    line-height: 1.45;
   }
 
   .giftButton {
-    max-width: none;
     width: 100%;
-  }
-}
-
-@media (max-width: 393px) {
-
-  .mobileSlider {
-    column-gap: 10px;
+    height: 48px;
+    font-size: 16px;
   }
 }

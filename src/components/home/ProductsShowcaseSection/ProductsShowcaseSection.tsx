@@ -1,57 +1,50 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import styles from "./ProductsShowcaseSection.module.css";
-
-import honeyImage from "@/assets/images/Honey.png";
-import giftImage from "@/assets/images/Gift.png";
-import { useRouter } from "next/navigation";
+import imageHoney from "@/assets/images/1.png";
+import imagePerga from "@/assets/images/2.png";
+import imagePollen from "@/assets/images/3.png";
+import imageGift from "@/assets/images/gift.png";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon";
 
 const productImages = {
-  honey: honeyImage,
-  perga: honeyImage,
-  pollen: honeyImage,
+  honey: imageHoney,
+  perga: imagePerga,
+  pollen: imagePollen,
 } as const;
 
 export default function ProductsShowcaseSection() {
   const t = useTranslations("HomePage.ProductsShowcaseSection");
   const [activeIndex, setActiveIndex] = useState(0);
-  const router = useRouter();
 
   const products = useMemo(
-    () => [
-      {
-        key: "honey",
-        title: t("items.honey.title"),
-        description: t("items.honey.description"),
-        image: productImages.honey,
-      },
-      {
-        key: "perga",
-        title: t("items.perga.title"),
-        description: t("items.perga.description"),
-        image: productImages.perga,
-      },
-      {
-        key: "pollen",
-        title: t("items.pollen.title"),
-        description: t("items.pollen.description"),
-        image: productImages.pollen,
-      },
-    ],
+    () =>
+      [
+        {
+          key: "honey",
+          title: t("items.honey.title"),
+          description: t("items.honey.description"),
+          image: productImages.honey,
+        },
+        {
+          key: "perga",
+          title: t("items.perga.title"),
+          description: t("items.perga.description"),
+          image: productImages.perga,
+        },
+        {
+          key: "pollen",
+          title: t("items.pollen.title"),
+          description: t("items.pollen.description"),
+          image: productImages.pollen,
+        },
+      ] as const,
     [t],
   );
-
-  useEffect(() => {
-    const id = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % products.length);
-    }, 3000);
-
-    return () => window.clearInterval(id);
-  }, [products.length]);
 
   const goPrev = () => {
     setActiveIndex((prev) => (prev - 1 + products.length) % products.length);
@@ -61,35 +54,26 @@ export default function ProductsShowcaseSection() {
     setActiveIndex((prev) => (prev + 1) % products.length);
   };
 
-  const openCatalogue = () => {
-    router.push("/catalog");
-  };
-
-  const openGift = () => {
-    router.push("/catalog?gift=true");
-  };
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.topLine} />
-        <h2 className={styles.title}>{t("btn")}</h2>
-
         <div className={styles.desktopGrid}>
           {products.map((item) => (
             <article key={item.key} className={styles.productCard}>
-              <div className={styles.productImageWrap}>
+              <div className={styles.productCardVisual}>
                 <Image
                   src={item.image}
-                  alt={item.title}
-                  width={230}
-                  height={250}
+                  alt=""
+                  fill
                   className={styles.productImage}
+                  sizes="300px"
                 />
+                <div className={styles.productOverlay} aria-hidden />
+                <div className={styles.productText}>
+                  <h3 className={styles.productTitle}>{item.title}</h3>
+                  <p className={styles.productDescription}>{item.description}</p>
+                </div>
               </div>
-
-              <h3 className={styles.productTitle}>{item.title}</h3>
-              <p className={styles.productDescription}>{item.description}</p>
             </article>
           ))}
         </div>
@@ -99,6 +83,7 @@ export default function ProductsShowcaseSection() {
             type="button"
             className={`${styles.arrowButton} ${styles.arrowLeft}`}
             onClick={goPrev}
+            aria-label={t("prev")}
           >
             <span className={styles.arrowIcon}>
               <ArrowRightIcon size={18} />
@@ -111,24 +96,31 @@ export default function ProductsShowcaseSection() {
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {products.map((item) => (
-                <article key={item.key} className={styles.mobileSlide}>
-                  <div className={styles.productCardMobile}>
-                    <div className={styles.productImageWrapMobile}>
+                <div key={item.key} className={styles.mobileSlide}>
+                  <article className={styles.productCardMobile}>
+                    <div className={styles.productCardVisualMobile}>
                       <Image
                         src={item.image}
-                        alt={item.title}
-                        width={154}
-                        height={167}
-                        className={styles.productImageMobile}
+                        alt=""
+                        fill
+                        className={styles.productImage}
+                        sizes="(max-width: 768px) 90vw, 300px"
                       />
+                      <div
+                        className={styles.productOverlayMobile}
+                        aria-hidden
+                      />
+                      <div className={styles.productTextMobile}>
+                        <h3 className={styles.productTitleMobile}>
+                          {item.title}
+                        </h3>
+                        <p className={styles.productDescriptionMobile}>
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-
-                    <h3 className={styles.productTitleMobile}>{item.title}</h3>
-                    <p className={styles.productDescriptionMobile}>
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
+                  </article>
+                </div>
               ))}
             </div>
           </div>
@@ -137,6 +129,7 @@ export default function ProductsShowcaseSection() {
             type="button"
             className={`${styles.arrowButton} ${styles.arrowRight}`}
             onClick={goNext}
+            aria-label={t("next")}
           >
             <span className={styles.arrowIcon}>
               <ArrowRightIcon size={18} />
@@ -144,34 +137,28 @@ export default function ProductsShowcaseSection() {
           </button>
         </div>
 
-        <button className={styles.catalogueButton} onClick={openCatalogue}>
+        <Link href="/catalog" className={styles.catalogueButton}>
           {t("btn")}
-        </button>
+        </Link>
 
         <article className={styles.giftCard}>
-          <div className={styles.giftImageWrap}>
+          <div className={styles.giftImageCol}>
             <Image
-              src={giftImage}
-              alt={t("gift.title")}
-              width={442}
-              height={228}
+              src={imageGift}
+              alt=""
+              fill
               className={styles.giftImage}
+              sizes="(max-width: 768px) 100vw, 565px"
             />
           </div>
-
-          <div className={styles.giftContent}>
+          <div className={styles.giftContentCol}>
             <div className={styles.giftTextBlock}>
               <h3 className={styles.giftTitle}>{t("gift.title")}</h3>
               <p className={styles.giftDescription}>{t("gift.description")}</p>
             </div>
-
-            <button
-              type="button"
-              className={styles.giftButton}
-              onClick={openGift}
-            >
+            <Link href="/catalog?gift=true" className={styles.giftButton}>
               {t("gift.button")}
-            </button>
+            </Link>
           </div>
         </article>
       </div>
