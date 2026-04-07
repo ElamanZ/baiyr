@@ -12,6 +12,7 @@ export default function Footer() {
 
   const isMd = !useBreakpoint("md");
 
+  //  pasjdp
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
