@@ -84,8 +84,16 @@
     "instagramValue": "baiyr_honey",
     "instagramButton": "Баракты ачуу",
     "phoneLabel": "Телефон номери",
-    "phoneValue": "+996 (000) 45-45-45",
-    "phoneButton": "Жазуу"
+    "phoneValue": "+996 (700) 88-58-05",
+    "phoneButton": "Жазуу",
+    "navAria": "Футер навигациясы",
+    "nav": {
+      "home": "Башкы бет",
+      "catalog": "Каталог",
+      "about": "Биз жөнүндө",
+      "shops": "Дүкөндөр",
+      "contacts": "Байланыш"
+    }
   },
   "CatalogPage": {
     "tabs": {
@@ -142,3 +150,6 @@
     }
   }
 }
+
+
+

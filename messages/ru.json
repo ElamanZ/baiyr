@@ -84,8 +84,16 @@
     "instagramValue": "baiyr_honey",
     "instagramButton": "Открыть страницу",
     "phoneLabel": "Номер телефона",
-    "phoneValue": "+996 (000) 45-45-45",
-    "phoneButton": "Написать"
+    "phoneValue": "+996 (700) 88-58-05",
+    "phoneButton": "Написать",
+    "navAria": "Навигация в футере",
+    "nav": {
+      "home": "Главная",
+      "catalog": "Каталог",
+      "about": "О нас",
+      "shops": "Магазины",
+      "contacts": "Контакты"
+    }
   },
   "CatalogPage": {
     "tabs": {
@@ -142,3 +150,6 @@
     }
   }
 }
+
+
+

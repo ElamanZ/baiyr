@@ -1,186 +1,162 @@
 .footer {
   width: 100%;
-  background: #223c3b;
+  background: #1e3131;
 }
 
 .container {
   width: 100%;
   max-width: 1440px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
   margin: 0 auto;
-  padding: 24px var(--page-padding-x);
+  padding: 24px var(--page-padding-x) 28px;
+  display: grid;
+  grid-template-columns: auto auto minmax(320px, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 72px);
 }
 
-.logo {
-  flex-shrink: 0;
+.logoWrap {
   display: flex;
   align-items: center;
-  margin-left: 100px;
+  justify-content: center;
+  margin-right: 160px;
 }
 
-.cardBlock {
-  width: 100%;
+.nav {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  flex-direction: column;
+  gap: 14px;
+  margin-right: 126px;
+}
+
+.navLink {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .card {
-  width: 100%;
-  max-width: 360px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
 
 .cardTop {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .textBlock {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   color: #ffffff;
 }
 
 .textBlock p {
-  font-size: 16px;
-  font-weight: 400;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .textBlock h4 {
-  font-size: 20px;
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.2;
   font-weight: 600;
 }
 
 .button {
   width: 100%;
-  height: 44px;
+  max-width: 360px;
+  min-height: 44px;
   border-radius: 16px;
+  border: none;
   background: #ffc060;
   color: #1a202c;
-  border: none;
   font-size: 16px;
+  line-height: 1;
   font-weight: 600;
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
-/* large desktop */
-@media (max-width: 1280px) {
-  .container {
-    gap: 24px;
-  }
-
-  .logo {
-    margin-left: 50px;
-  }
-
-  .cardBlock {
-    gap: 24px;
-  }
-
-  .textBlock p {
-    font-size: 15px;
-  }
-
-  .textBlock h4 {
-    font-size: 18px;
-  }
-
-  .button {
-    font-size: 15px;
-  }
+.button:hover {
+  opacity: 0.92;
 }
 
-/* tablet */
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
   .container {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
-    padding: 20px var(--page-padding-x);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 22px;
   }
 
-  .logo {
+  .logoWrap,
+  .nav {
     display: none;
   }
 
-  .cardBlock {
-    justify-content: center;
-    gap: 20px;
-    padding: 0 50px;
+  .contacts {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    align-items: center;
   }
 
   .card {
-    max-width: none;
+    width: min(100%, 360px);
   }
 }
 
-/* mobile */
 @media (max-width: 768px) {
   .container {
-    padding: 16px var(--page-padding-x);
-    gap: 16px;
+    padding: 40px var(--page-padding-x) 22px;
+    gap: 20px;
   }
 
-  .logo {
-    display: none;
-  }
-
-  .cardBlock {
-    flex-direction: column;
+  .contacts {
+    width: 100%;
+    gap: 20px;
     align-items: stretch;
-    gap: 30px;
-    padding: 20px 60px;
   }
 
   .card {
-    gap: 12px;
+    width: 100%;
+    gap: 10px;
   }
 
   .cardTop {
     gap: 10px;
   }
 
+  .cardTop svg {
+    width: 44px;
+    height: 44px;
+  }
+
   .textBlock p {
     font-size: 14px;
+    font-weight: 500;
   }
 
   .textBlock h4 {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .button {
-    height: 38px;
-    font-size: 14px;
+    max-width: none;
+    min-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
   }
-}
-
-/* small mobile */
-@media (max-width: 480px) {
-
-  .cardBlock {
-    padding: 10px 20px;
-    gap: 20px;
-  }
-
-  .container {
-    padding: 14px var(--page-padding-x);
-  }
-
-  .cardTop {
-    align-items: center;
-  }
-
-  .textBlock h4 {
-    font-size: 14px;
-  }
-
 }

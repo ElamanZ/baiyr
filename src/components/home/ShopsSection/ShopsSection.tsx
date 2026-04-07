@@ -43,7 +43,7 @@ export default function ShopsSection() {
   );
 
   return (
-    <section className={styles.section} aria-labelledby="shops-heading">
+    <section id="shops" className={styles.section} aria-labelledby="shops-heading">
       <div className={styles.container}>
         <div className={styles.layout}>
           <h2 id="shops-heading" className={styles.title}>
