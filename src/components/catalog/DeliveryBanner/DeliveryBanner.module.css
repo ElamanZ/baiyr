@@ -1,17 +1,15 @@
 .banner {
   width: 100%;
   margin-bottom: 32px;
-  padding: 8px;
-  background: #f6f0de;
-  border: 1px solid #6f8583;
-
+  padding: 20px;
+  background: #1E3131;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-
+  border-top: 1px solid #364D4D;
   text-align: center;
-  color: #000000;
+  color: #FFFFFF;
   font-size: 22px;
   font-weight: 600;
   line-height: 1.3;
